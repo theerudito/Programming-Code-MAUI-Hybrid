@@ -1,0 +1,53 @@
+﻿
+<div @onclick="OpenBurger" id="containerBurger">
+    <i class="bi bi-list"></i>
+</div>
+
+<div class="@_containerTab" id="containerMenu">
+
+    <img src='/assets/splashTwo.svg'alt="potho"  @onclick='() => NavigationApp("/")' />
+
+    <i class="bi bi-x" @onclick="CloseBurger"></i>
+
+    <div class="containerList">
+        @if (_menuList.Count > 0)
+        {
+            @foreach (var item in _menuList)
+            {
+                <p @onclick="() => NavigationApp(item.NameLink)">@item.NameMenu</p>
+            }
+        }
+        else
+        {
+            <p @onclick='() => NavigationApp("/")'>@LanguageService.HomeLabel</p>
+            <p @onclick='() => NavigationApp("/about")'>@LanguageService.AboutLabel</p>
+        }
+    </div>
+
+    <div class="containerControls">
+        <img src="@((MyVariablesApp._languageApp == "ES" )
+            ? "assets/flag_EN.png" 
+            : "assets/flag_ES.png")" @onclick="ChangeLanguage" alt="assets/flag_EN.png" />
+        <p>|</p>
+        <i class="@((MyVariablesApp._themeApp == "Dark" )
+            ? "bi bi-brightness-high-fill text-warning"
+            : "bi bi-moon")" @onclick="ChangeTheme" alt="assets/flag_EN.png"></i>
+    </div>
+
+    <div class="containerSocialMedia">
+        <p>@LanguageService.FollowUsLabel</p>
+        <div>
+            <i class="bi bi-instagram text-danger"
+                @onclick='() => OpenSocialMedia("https://www.instagram.com/theerudito/")'></i>
+
+            <i class="bi bi-github text-light" @onclick='() => OpenSocialMedia("https://github.com/theerudito")'></i>
+
+            <i class="bi bi-globe text-info" @onclick='() => OpenSocialMedia("https://byerudito.web.app/")'></i>
+        </div>
+    </div>
+
+    <div class="containerVersion">
+        <p>Version @_versionApp</p>
+        <span @onclick="LogOut">@LanguageService.LogoutLabel</span>
+    </div>
+</div>

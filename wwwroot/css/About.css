@@ -1,0 +1,78 @@
+﻿.containerAbout {
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+    height: 100vh;
+}
+
+.containerAbout > img {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+    margin: 60px auto;
+}
+
+.containerAgradecimientos {
+    background: #181A2B;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0d101e;
+    width: 300px;
+    user-select: none;
+    margin: 10px auto;
+}
+
+.containerAgradecimientos > h6 {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.containerAgradecimientos > p {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+    cursor: pointer;
+}
+
+.containerPolicy {
+    background: #181A2B;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0d101e;
+    width: 300px;
+    user-select: none;
+    margin: 10px auto;
+}
+
+.containerPolicy > h6 {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+}
+
+.containerPolicy > p {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
+    cursor: pointer;
+}
+
+.containerButtonDeleteAcount {
+    display: flex;
+    margin: auto;
+}

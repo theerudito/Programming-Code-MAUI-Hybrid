@@ -1,0 +1,77 @@
+﻿@page "/courseList"
+
+<div class="containerCourseList">
+    <div class="containerCourseListOpenModal" >
+        <h4 @onclick="OpenModal">@LanguageService.AddNewCourseLabel</h4>
+        <i class="bi bi-plus-circle" @onclick="OpenModal"></i>
+        <i class="@((MyVariablesApp._isSeaching == true) ? "bi bi-x-circle" : "bi bi-search")" @onclick="ShowInput"></i>
+    </div>
+    <div class="@MyVariablesApp._displayInput" id="containerSeachMyCourse">
+        <input class="form-control" placeholder="@LanguageService.FindCourseInput" @oninput="SearchMyCourse" />
+    </div>
+   
+    @if (_myApplication.Count > 0)
+    {
+        @foreach (var item in _myApplication)
+        {
+            <div class="containerCard">
+                <div class="containerTitle">
+                    <p>@item.TitleCourse</p>
+                    <span>@item.ScoreCourse%  @((@item.ScoreCourse >= 100) 
+                        ? LanguageService.CompleteLabel
+                        : LanguageService.IncompleteLabel)
+                    </span>
+
+                    <img src=@((@item.LikeCourse == true) 
+                                 ? "./assets/heart-red.svg"
+                                 : "./assets/heart-white.svg")
+                                 @onclick="() => LikeCourse(item.IdApplication)" alt=""/>
+                </div>
+                <div class="containerImage">
+                    <img src="@((item.ImageUrl == "") ? ImagenConverterApp.ToPng(item.ImageBase64) : item.ImageUrl)"  alt="./assets/javascript.svg" />
+                </div>
+                <button @onclick="() => NavigateMyClass(item)">
+                    @if (item.ScoreCourse == 100)
+                    {
+                        <text>@LanguageService.CompleteLabel</text>
+                    }
+                    else if (item.ScoreCourse > 0)
+                    {
+                        <text>@LanguageService.ContinueLabel</text>
+                    }
+                    else 
+                    {
+                        <text>@LanguageService.StartLabel</text>
+                    }
+                </button>
+            </div>
+        }
+    }
+    
+</div>
+
+
+<Modal @ref="MyVariablesApp.ModalCourseList" Class="containerModalMyCourse">
+    <ModalContent Centered>
+        <ModalHeader Class="modalHeader">
+            <ModalTitle>@LanguageService.SelectAnCourseLabel</ModalTitle>
+            <i class="bi bi-x" @onclick="CloseModal"></i>
+        </ModalHeader>
+        <ModalBody Class="modalBody">
+                <div class="containerModalMyCourseCard">
+                    @foreach (var item in _listCourse)
+                    {
+                        <div class="containerModalMyCourseBody" @onclick="() => SelectCourse(item)">
+                            <div class="containerModalPAndI">
+                                <p>@item.Name</p>
+                                <i class='@((item.SelectedCourse == true) ? "bi bi-check-circle" : "bi-plus-circle")'></i>
+                            </div>
+                        <img src="@((item.ImageUrl == "" ) ? ImagenConverterApp.ToPng(item.ImageBase64) : item.ImageUrl)" alt="./assets/code.svg">
+                    </div>
+                    }
+                </div>   
+        </ModalBody>
+        <ModalFooter Class="modalFooter">
+        </ModalFooter>
+    </ModalContent>
+</Modal>

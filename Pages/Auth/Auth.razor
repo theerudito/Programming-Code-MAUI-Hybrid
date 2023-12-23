@@ -1,0 +1,9 @@
+﻿@page "/auth"
+
+@implements IDisposable
+
+<div class="containerAuth">
+   
+    @(AuthService._showRegister ? (RenderFragment)(@<Register />) : (RenderFragment)(@<Login />))
+
+</div>

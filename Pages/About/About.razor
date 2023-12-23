@@ -1,0 +1,20 @@
+@page "/about"
+
+<div class="containerAbout">
+
+    <img src='@((ThemeService._themeApp == "Light") ? "./assets/splashOne.svg" :  "./assets/splashTwo.svg")' alt="h" />
+    <div class="containerAgradecimientos">
+        <h6>@LanguageService.SpecialLabel</h6>
+        <p @onclick='() => LauncherManager.OpenBrowser("https://github.com/theerudito")'>@LanguageService.ProgrammerLabel : &nbsp<i class="bi bi-github"></i> &nbsp Jorge Loor</p>
+        <p @onclick='() => LauncherManager.OpenBrowser("https://github.com/MilagrosMunoz")'>@LanguageService.TesterLabel : &nbsp<i class="bi bi-github"></i> &nbsp Milagros Muñoz</p>
+    </div>
+    <div class="containerPolicy">
+        <h6>@LanguageService.InformationLabel</h6>
+        <p @onclick='() => LauncherManager.OpenBrowser("https://byerudito.web.app/privacy-policy")'>@LanguageService.PolicyFourLabel</p>
+        <p @onclick='() => LauncherManager.OpenBrowser("https://byerudito.web.app/policy-user")'>@LanguageService.PolicyTwoLabel</p>
+    </div>
+    <div class="containerButtonDeleteAcount">
+        <button class="btn btn-danger" @onclick="DeleteAccount"><i class="bi bi-trash"></i> @LanguageService.DeleteAccountButton</button>
+    </div>
+</div>
+

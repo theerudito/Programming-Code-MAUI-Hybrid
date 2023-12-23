@@ -1,0 +1,136 @@
+﻿#containerBurger > i {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 5;
+    color: white;
+}
+
+#containerMenu {
+    position: fixed;
+    background: #181A2B;
+    width: 250px;
+    height: 100%;
+    color: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    animation: openMenu 1s;
+}
+@keyframes openMenu {
+    0% {
+        transform: translateX(-100%); 
+       
+    }
+    100% {
+        transform: translateX(0px);
+       
+    }
+}
+
+#containerMenu > img {
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+#containerMenu > i {
+    color: white;
+    font-size: 25px;
+    top: 1px;
+    left: 215px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.containerList {
+   margin: 0px auto;
+}
+
+.containerList p {
+    display: flex;
+    margin: 20px auto;
+    background-color: greenyellow;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    user-select: none;
+    cursor:pointer;
+}
+
+.containerList p:hover {
+    background-color: lawngreen;
+}
+
+.containerControls{
+   display: flex;
+   margin: 50px auto;
+   gap: 10px;
+}
+
+.containerControls > img {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  cursor:pointer;
+  user-select: none;
+}
+
+.containerControls > p {
+    margin: auto;
+    user-select: none;
+}
+
+.containerControls > i {
+    font-size: 20px;
+    cursor:pointer;
+    margin-top: -5px;
+}
+
+.containerSocialMedia > p {
+    margin: 10px auto;
+    user-select: none;
+    text-align: center;
+}
+
+.containerSocialMedia > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.containerSocialMedia > div > i {
+   margin: auto;
+   cursor:pointer;
+}
+
+.containerVersion {
+    height: 100px;
+   margin:  auto;
+}
+
+.containerVersion > p {
+   margin: 10px auto;
+   user-select: none;
+   text-align: center;
+}
+
+.containerVersion > span {
+   background: red;
+   border-radius: 10px;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 120px;
+   user-select: none;
+   cursor:pointer;
+}
+
+.containerVersion > span:hover {
+   background-color: orangered 
+}

@@ -1,0 +1,42 @@
+﻿.containerHeader {
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 5% 80% 15%;
+    background: #512BD4;
+    position: fixed;
+    z-index: 1;
+}
+
+.containerInfo {
+    display: flex;
+    gap: 0px;
+    margin-left: auto;
+    text-align: center;
+    color: white;
+}
+
+.containerInfo > p {
+    margin: auto;
+     user-select: none;
+}
+
+.containerImageHeader {
+    width: 50px;
+    height: 50px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.containerImageHeader > img {
+    width: 40px;
+    padding: 4px;
+    height: 40px;
+    background: silver;
+    border-radius: 50%;
+    border: 1px solid white;
+    object-fit: fill;
+}

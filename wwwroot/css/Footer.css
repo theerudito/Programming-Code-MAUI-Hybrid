@@ -1,0 +1,21 @@
+﻿.containerFooter {
+    background: #512BD4;
+    position: fixed;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.containerFooter > h6 {
+    color: white;
+    display: flex;
+    margin: auto
+}

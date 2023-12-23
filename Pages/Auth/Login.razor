@@ -1,0 +1,52 @@
+﻿@page "/login"
+
+<div class="ContainerForm">
+
+    <EditForm Model="_authData">
+        <div class="containerLogo">
+            <img src="./assets/splashTwo.svg" alt="" />
+        </div>
+        <h3>@LanguageService.LoginLabel</h3>
+
+        <InputText 
+            class="form-control" 
+            placeholder="@LanguageService.UserNameInput" 
+            type="text"
+            @bind-Value="_authData.UserName" />
+
+        <InputText class="form-control" 
+            placeholder="@LanguageService.PasswordInput" 
+            type="password"
+            @bind-Value="_authData.Password" />
+
+        @if (_mySpinner == false)
+        {
+            <button type="button" @onclick="BtnLogin">@LanguageService.LoginLabel</button>
+        }
+        else
+        {
+            <button type="submit">
+                <div class="spinner-border text-light" style="height: 20px; width: 20px" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </button>
+        }
+        
+        <div class="containerInfoRegister">
+            <span>@LanguageService.NoAccountLabel</span>
+            <p @onclick="BtnShowRegister">@LanguageService.RegisterLabel</p>
+        </div>
+
+    </EditForm>
+</div>
+
+<div class="containerAlertAuth">
+    <Alert Color="Color.Danger" Visible="_myAlert">
+        <AlertMessage>@LanguageService.MessageAlert</AlertMessage>
+        <AlertDescription>@LanguageService.MessageErrorTwo</AlertDescription>
+    </Alert>
+</div>
+
+
+
+

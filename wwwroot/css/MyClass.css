@@ -1,0 +1,115 @@
+﻿.containerPrincipalClass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+    user-select:none;
+}
+
+.containerCardMyClass > div {
+    margin: 15px auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+.containerCardMyClass > div > h3 {
+    color: white;
+    background: #292D35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    border-radius: 5px;
+}
+
+.containerBodyMyClass {
+    margin: 10px auto;
+    display: grid;
+    gap: 10px 0px;
+    color: white;
+}
+
+.containerTitleMyClass {
+    background: #292D35;
+    border-radius: 5px;
+    width: 380px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: auto;
+}
+
+.containerTitleMyClass > h5 {
+     margin-left: 5px;
+     margin-top: 5px;
+}
+
+.containerTitleMyClass > i {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 1px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#containerInformacion {
+    background: #181A2B;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#containerInformacion > h6 {
+    margin-left: 5px;
+}
+
+#containerInformacion > p {
+   margin-left: 5px;  
+}
+
+.containerImageMyClass {
+}
+
+.containerImageMyClass > img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    
+}
+
+.containerMyClassControls {
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+    gap: 10px;
+    align-items: center;
+    justify-content:center;
+    
+}
+
+.containerMyClassControls > button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius:5px;
+    background: #512BD4;
+    color: white;
+}
+
+.containerMyClassControls > button > i {
+   margin: auto;
+   display: flex;
+   align-items: center;
+   justify-content:center;
+}
+
+.containerMyClassControls > button:hover {
+    background: #2A34EB;
+}
+

@@ -1,0 +1,74 @@
+﻿@page "/register"
+
+<div class="ContainerForm">
+
+    <EditForm Model="_authData">
+        <DataAnnotationsValidator />
+        <div class="containerLogo">
+            <img src="./assets/splashTwo.svg" alt="" />
+        </div>
+        <h3>@LanguageService.RegisterLabel</h3>
+
+        <InputText 
+            class="form-control" 
+            placeholder="@LanguageService.FirstNameInput" 
+            type="text" 
+            @bind-Value="_authData.Name" />
+         
+        <InputText 
+            class="form-control" 
+            placeholder="@LanguageService.UserNameInput" 
+            type="text" 
+            @bind-Value="_authData.UserName" />
+
+        <InputText 
+            class="form-control" 
+            placeholder="@LanguageService.EmailInput" 
+            type="text" 
+            @bind-Value="_authData.Email" />
+
+        <InputText 
+            class="form-control" 
+            placeholder="@LanguageService.PasswordInput" 
+            type="password" 
+            @bind-Value="_authData.Password" />
+       
+        @if(_mySpinner == false)
+        {
+            <button type="button" @onclick="BtnRegister">@LanguageService.RegisterLabel</button>
+        } else
+        {
+            <button type="submit">
+                <div class="spinner-border text-light" style="height: 20px; width: 20px" role="status">
+                    <span class="visually-hidden"></span>
+                </div>
+            </button>
+        }
+      
+        <div class="containerInfoRegister">
+            <span>@LanguageService.AlreadyAccountLabel </span>
+            <p @onclick="BtnShowLogin">@LanguageService.LoginLabel</p>
+        </div>
+
+        <div class="containerPolicyRegister">
+            <span>@LanguageService.PolicyOneLabel</span>
+            <div>
+                <p @onclick='() => LauncherManager.OpenBrowser("https://byerudito.web.app/policy-user")'>@LanguageService.PolicyTwoLabel</p>
+                <span>@LanguageService.PolicyThreeLabel</span>
+                <p @onclick='() => LauncherManager.OpenBrowser("https://byerudito.web.app/privacy-policy")'>@LanguageService.PolicyFourLabel</p>
+            </div>    
+        </div>
+        
+    </EditForm>
+</div>
+
+<div class="containerAlertAuth">
+    <Alert Color="Color.Danger" Visible="_myAlert">
+        <AlertMessage>@LanguageService.MessageAlert</AlertMessage>
+        <AlertDescription>@LanguageService.MessageErrorOne</AlertDescription>
+    </Alert>
+</div>
+
+
+
+

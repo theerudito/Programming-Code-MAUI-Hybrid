@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+	
+@if (NavigationManagerApp._inHome == true)
+{
+	<Header />
+	<main class="containerMain">
+		@Body
+	</main>
+	<Footer />
+}
+else
+{
+	<main class="containerMain">
+		@Body
+	</main>
+}
+
+@* @if (InternetService.isConnected == false)
+{
+	
+}
+else
+{
+	<main class="containerMain">
+		@Body
+	</main>
+} *@
+
+
+
+
+	
+
+
+

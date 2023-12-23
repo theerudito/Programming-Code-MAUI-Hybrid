@@ -1,0 +1,140 @@
+﻿.containerAuth {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    user-select: none;
+}
+
+.containerLogo {
+    margin: auto;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.containerLogo > img {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+}
+
+.ContainerForm {
+    background: #181A2B;
+    min-width: 360px;
+    max-width: 360px;
+    min-height: auto;
+    max-height: auto;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #0d101e;
+}
+
+.containerAlertAuth {
+    margin: 10px auto;
+    gap: 10px;
+}
+
+
+.containerInfoRegister {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    justify-content: center;
+    gap: 10px
+}
+
+.containerInfoRegister > span {
+    color: white;
+    margin: auto;
+    justify-content: center;
+}
+
+.containerInfoRegister > p {
+   color: aqua;
+   cursor:pointer;
+   margin: 10px auto;
+   justify-content: center;
+}
+
+.containerInfoRegister > p:hover {
+    color: aquamarine;
+}
+
+.containerPolicyRegister {
+    color: silver;
+}
+
+.containerPolicyRegister > span {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.containerPolicyRegister > p {
+    display: flex;
+    margin: 0px 0px 10px 0px;
+    justify-content: center;
+    
+}
+.containerPolicyRegister > div
+{   
+    display: flex;
+    gap: 10px;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+.containerPolicyRegister > div > p
+{   
+    user-select: none;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ContainerForm > form > h3 {
+    color: white;
+    text-align: center;
+    user-select: none;
+    margin: 0px 0px 50px 0px;
+}
+
+.ContainerForm > form > input {
+    color: black;
+    text-align: left;
+    margin: 10px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+}
+
+.ContainerForm > form > input:focus {
+    color: black
+}
+
+.ContainerForm > form > button {
+    color: white;
+    text-align: center;
+    margin: auto;
+    border: none;
+    background: #512BD4;
+    width: 50%;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    cursor:pointer;
+    user-select:none;
+    height: 30px;
+}
+
+.ContainerForm > form > button:hover {
+     background: #2a34eb;
+}
+

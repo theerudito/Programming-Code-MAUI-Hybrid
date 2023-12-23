@@ -1,0 +1,39 @@
+﻿@page "/myclass/{IdApplication:int}/{IdCourse:int}/{IdType:int}"
+
+
+<div class="containerPrincipalClass">        
+            <div class="containerCardMyClass">
+                    <div>
+                        <h3>@_myCourse</h3>
+                    </div>
+              <div class="containerBodyMyClass"> 
+                @foreach (var item in _myClassList)
+                {
+                        <div class="containerTitleMyClass" @onclick="() => OpenMyClass(item.IdClass)">
+                            <h5>@item.TitleOne</h5>
+                            <i class='@((IdClass == item.IdClass)
+                                    ? "bi bi-folder2" 
+                                    : "bi bi-folder-x")'
+                                    @onclick="() => OpenMyClass(item.IdClass)"></i>
+                        </div>
+
+                <div id="containerInformacion" class='@((IdClass == item.IdClass)? "d-bloc" : "d-none")'>
+                            <h6>@item.TitleTwo</h6>
+                            <p>@item.InfoClass</p>
+                            <div class="containerImageMyClass">
+                                <img src="@((item.ImageUrl == "")
+                                        ? ImagenConverterApp.ToPng(item.ImageBase64)
+                                        : item.ImageUrl) " alt="code">
+                            </div>
+                            <div class="containerMyClassControls">
+                                <button @onclick="() => LauncherManager.OpenBrowser(item.LinkRef)"><i class="bi bi-info-circle"></i></button>
+                                <button @onclick="() => BtnNextClass(item.IdClass)"><i class='@((completeClass == true) ?  "bi bi-hand-thumbs-up-fill" :  "bi bi-hand-index-thumb-fill")'></i></button>
+                            </div>
+                        </div>
+                }
+              </div>
+            </div>
+</div>
+            
+
+

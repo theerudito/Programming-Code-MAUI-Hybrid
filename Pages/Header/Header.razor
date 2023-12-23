@@ -1,0 +1,19 @@
+﻿@implements IDisposable
+
+<div class="containerHeader">
+    <Menu />
+    <div class="containerInfo">
+        <p>@LanguageService.WelcomeLabel: @_nameUser</p>
+    </div>
+    <div class="containerImageHeader">
+        <img src="./assets/logoBot.svg" alt="img" />
+    </div>
+</div>
+
+@code
+{
+    public void Dispose()
+    {
+        LanguageService.ChangeLanguage -= StateHasChanged; ;
+    }
+}

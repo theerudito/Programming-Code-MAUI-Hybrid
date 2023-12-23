@@ -1,0 +1,120 @@
+﻿@page "/addClass"
+
+
+<div class="containerAddClass">
+    <div class="containerOpenModalClass">
+        <button @onclick="() => OpenModal(MyVariablesApp.ModalAddClassRef)"><i class="bi bi-file-earmark-plus"></i></button>
+        <button @onclick="() => OpenModal(MyVariablesApp.ModalAddImageClassRef)"><i class="bi bi-card-image"></i></button>
+        <button @onclick="() => ShowInput()"><i class="@((MyVariablesApp._isSeaching == false) ? "bi bi-search" : "bi bi-x-circle")"></i></button>
+    </div>
+    <div class="@MyVariablesApp._displayInput" id="containerSearchClass">
+        <input class="form-control" placeholder="Search Class" @oninput="SearchClass" />
+    </div>
+    <div class="containerAddClassList">
+        @foreach(var item in _myClassList)
+        {
+            <div class="containerCardClass">
+                <div class="containerTitleClassList">
+                    <p>@item.TitleOne</p>
+                </div>
+                <button class="btn btn-warning" @onclick="() => GetClassById(item)"><i class="bi bi-pencil-square"></i></button>
+            </div>
+        }
+    </div>
+</div>
+
+<Modal @ref="MyVariablesApp.ModalAddClassRef">
+    <ModalContent Centered>
+        <ModalHeader Class="modalHeader">
+            <ModalTitle>@((_idClass == 0) ? "ADD CLASS" : "EDIT CLASS")</ModalTitle>
+            <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddClassRef)"></i>
+        </ModalHeader>
+        <ModalBody Class="modalBody">
+            <Field>
+                <div class="containerBodyModalClass">
+                        <EditForm Model="_myClass" class="containerBodyModalClass">
+
+                         @*    <InputSelect 
+                                class="form-select"
+                                ValueChanged="@((int value) => GetIdCourse(value))"
+                                Value="_myClass.IdCourse"
+                                ValueExpression="@(() => _myClass.IdCourse)">
+                                <option>SELECT A LANGUAGE</option>
+                                @foreach (var item in _listCourse)
+                                {
+                                     <option value="@item.IdCourse">@item.Name</option>
+                                }
+                            </InputSelect> *@
+
+                            <InputSelect class="form-select" @bind-Value="_myClass.IdCourse">
+                                <option value="">SELECT A LANGUAGE</option>
+                                @foreach (var item in _listCourse)
+                                {
+                                    <option value="@item.IdCourse">@item.Name</option>
+                                }
+                            </InputSelect>
+
+                            <InputSelect class="form-select" @bind-Value="_myClass.IdImageClass">
+                                <option value="">SELECT AN IMAGE</option>
+                                @foreach (var item in _listImagesClass)
+                                {
+                                    <option value="@item.IdImageClass">@item.NameImage</option>
+                                }
+                            </InputSelect>
+
+                            <InputSelect class="form-select" @bind-Value="_myClass.IdType">
+                                <option value="">SELECT A TYPE</option>
+                                @foreach (var item in _courseTypeList)
+                                {
+                                    <option value="@item.IdType">@item.Name</option>
+                                }
+                            </InputSelect>
+
+                        <InputText class="form-control" @bind-Value="_myClass.TitleOne" placeholder="Title One" />
+                        <InputTextArea class="form-control" @bind-Value="_myClass.TitleTwo" placeholder="Title Two" />
+                        <InputText class="form-control" @bind-Value="_myClass.InfoClass" placeholder="Info Class" />
+                        <InputText class="form-control" @bind-Value="_myClass.CodeClass" placeholder="Code" />
+                        <InputText class="form-control" @bind-Value="_myClass.LinkRef" placeholder="Link" />
+
+                    </EditForm>
+                   
+                </div>
+            </Field>
+        </ModalBody>
+        <ModalFooter Class="modalFooter">
+            <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddClassRef)">CANCEL</Button>
+            <Button Color="Color.Primary" @onclick="SaveNewClass">@((_idClass == 0) ? "SAVE CLASS" : "UPDATE CLASS")</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+<Modal @ref="MyVariablesApp.ModalAddImageClassRef">
+    <ModalContent Centered>
+        <ModalHeader Class="modalHeader">
+            <ModalTitle>ADD IMAGE CLASS</ModalTitle>
+            <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddImageClassRef)"></i>
+        </ModalHeader>
+        <ModalBody Class="modalBody">
+            <Field>
+                <div class="containerImagePage">
+                    <img src="@MyVariablesApp.ImageDefault" alt=""/>
+                    <EditForm Model="_imagesClass">
+                        <InputText class="form-control" placeholder="Name Image" @bind-Value="_imagesClass.NameImage" />
+                        <InputText class="form-control" placeholder="Image Url" @bind-Value="_imagesClass.ImageUrl" />
+                        <InputFile class="form-control" OnChange="LoadImage" accept="image/png, image/jpeg, image/webp, image/svg" />
+                    </EditForm>
+                </div>
+            </Field>
+        </ModalBody>
+        <ModalFooter Class="modalFooter">
+            <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddImageClassRef)">CANCEL</Button>
+            <Button Color="Color.Primary" @onclick="UpLoadImage">ADD IMAGE</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+
+
+

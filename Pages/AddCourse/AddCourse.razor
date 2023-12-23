@@ -1,0 +1,101 @@
+﻿@page "/addCourse"
+
+
+<div class="containerAddCourse">
+        <div class="containerOpenModal">
+            <button @onclick="() => OpenModal(MyVariablesApp.ModalAddCourseRef)"><i class="bi bi-file-earmark-plus"></i></button>
+            <button @onclick="() => OpenModal(MyVariablesApp.ModalAddImageRef)"><i class="bi bi-card-image"></i></button>
+        <button @onclick="() => ShowInput()"><i class="@((MyVariablesApp._isSeaching == false) ? "bi bi-search" : "bi bi-x-circle")"></i></button>
+        </div>
+        <div class="@MyVariablesApp._displayInput" id="containerSearchCourse">
+            <input class="form-control" placeholder="Search Course" @oninput="SearchCourse" />
+        </div>
+        <div class="containerAddCourseList">
+        @foreach (var item in _listCourse)
+        {
+            <div class="containerCardCourse">
+                <div class="containerTitleCardList">
+                    <p>@item.Name</p>
+                </div>
+                    <p>@item.TypeName</p>
+                <button class="btn btn-warning" @onclick="() => GetCourse(item)"><i class="bi bi-pencil-square"></i></button>
+            </div>
+        }
+    </div>     
+</div>
+
+<Modal @ref="MyVariablesApp.ModalAddCourseRef">
+    <ModalContent Centered>
+        <ModalHeader Class="modalHeader">
+            <ModalTitle>ADD COURSE</ModalTitle>
+            <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddCourseRef)"></i>
+        </ModalHeader>
+        <ModalBody Class="modalBody">
+            <Field>
+               <div class="containerBodyModal">
+
+                    <EditForm Model="_course" class="containerBodyModal">
+                        
+                        <InputSelect class="form-select" @bind-Value="_course.IdImageCourse">
+                            <option value="">SELECT AN IMAGE</option>
+                            @foreach (var item in _listImages)
+                            {
+                                <option value="@item.IdImageCourse">@item.NameImage</option>
+                            }
+                        </InputSelect>
+
+                        <InputSelect class="form-select" @bind-Value="_course.IdType">
+                            <option value="">SELECT A TYPE</option>
+                            @foreach (var item in _courseTypeList)
+                            {
+                                <option value="@item.IdType">@item.Name</option>
+                            }
+                        </InputSelect>
+
+                        <InputText 
+                            class="form-control"
+                            placeholder="Name Course"
+                            @bind-Value="_course.Name" />
+
+                    </EditForm>
+                    
+               </div>
+            </Field>
+        </ModalBody>
+        <ModalFooter Class="modalFooter">
+            <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddCourseRef)">CANCEL</Button>
+            <Button Color="Color.Primary" @onclick="SaveNewCourse">ADD COURSE</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+
+
+
+<Modal @ref="MyVariablesApp.ModalAddImageRef">
+    <ModalContent Centered>
+        <ModalHeader Class="modalHeader">
+            <ModalTitle>ADD IMAGE COURSE</ModalTitle>
+            <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddImageRef)"></i>
+        </ModalHeader>
+        <ModalBody Class="modalBody">
+            <Field>
+                <div class="containerImagePage">
+                    <img src="@MyVariablesApp.ImageDefault" />
+                    <input class="form-control" placeholder="Name Image" @bind="_imagesCourse.NameImage" />
+                    <input class="form-control" placeholder="Image Url" @bind="_imagesCourse.ImageUrl" />
+                    <InputFile class="form-control" OnChange="LoadImage" accept="image/png, image/jpeg, image/webp, image/svg" />
+                </div>
+            </Field>
+        </ModalBody>
+        <ModalFooter Class="modalFooter">
+            <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddImageRef)">CANCEL</Button>
+            <Button Color="Color.Primary" @onclick="UpLoadImage">ADD IMAGE</Button>
+        </ModalFooter>
+    </ModalContent>
+</Modal>
+
+
+
+
