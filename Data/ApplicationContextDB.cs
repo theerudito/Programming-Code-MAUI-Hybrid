@@ -79,12 +79,12 @@ namespace ProgrammingCode.Data
 
                 entity.HasMany(a => a.ClassNavigation)
                       .WithOne(a => a.Auth)
-                      .HasForeignKey(a => a.IdClassOther)
+                      .HasForeignKey(a => a.IdUser)
                       .HasConstraintName("auth_fk");
 
                 entity.HasMany(a => a.ApplicationNavigation)
                       .WithOne(a => a.Auth)
-                      .HasForeignKey(a => a.IdApplication)
+                      .HasForeignKey(a => a.IdUser)
                       .HasConstraintName("auth_fk");
             });
 
@@ -151,7 +151,7 @@ namespace ProgrammingCode.Data
 
                 entity.HasMany(mc => mc.ClassNavigation)
                       .WithOne(mc => mc.MyClass)
-                      .HasForeignKey(mc => mc.IdClassOther)
+                      .HasForeignKey(mc => mc.IdClass)
                       .HasConstraintName("class_fk");
             });
 
@@ -169,6 +169,7 @@ namespace ProgrammingCode.Data
                       .WithOne(ic => ic.ImageCourse)
                       .HasForeignKey(a => a.IdImageCourse)
                       .HasConstraintName("imagecourse_fk");
+
             });
 
             modelBuilder.Entity<CourseTable>(entity =>
@@ -181,19 +182,20 @@ namespace ProgrammingCode.Data
                 entity.Property(c => c.SelectedCourse).HasDefaultValue(false);
 
 
+
                 entity.HasMany(c => c.ApplicationNavigation)
                       .WithOne(c => c.Courses)
-                      .HasForeignKey(c => c.IdApplication)
+                      .HasForeignKey(c => c.IdCourse)
                       .HasConstraintName("course_fk");
 
                 entity.HasMany(c => c.MyClassTableNavigation)
                       .WithOne(c => c.Course)
-                      .HasForeignKey(c => c.IdClass)
+                      .HasForeignKey(c => c.IdCourse)
                       .HasConstraintName("course_fk");
 
                 entity.HasMany(c => c.ClassNavigation)
                       .WithOne(c => c.Course)
-                      .HasForeignKey(c => c.IdClassOther)
+                      .HasForeignKey(c => c.IdCourse)
                       .HasConstraintName("course_fk");
             });
 
@@ -205,17 +207,17 @@ namespace ProgrammingCode.Data
 
                 entity.HasMany(t => t.CourseNavigation)
                       .WithOne(t => t.TypeCourses)
-                      .HasForeignKey(t => t.IdImageCourse)
+                      .HasForeignKey(t => t.IdType)
                       .HasConstraintName("type_fk");
 
                 entity.HasMany(t => t.MyClassTableNavigation)
                       .WithOne(t => t.TypeCourses)
-                      .HasForeignKey(t => t.IdClass)
+                      .HasForeignKey(t => t.IdType)
                       .HasConstraintName("type_fk");
 
                 entity.HasMany(u => u.ApplicationNavigation)
                      .WithOne(a => a.TypeCourses)
-                     .HasForeignKey(a => a.IdApplication)
+                     .HasForeignKey(a => a.IdType)
                      .HasConstraintName("type_fk");
             });
 
@@ -228,6 +230,8 @@ namespace ProgrammingCode.Data
                 entity.Property(a => a.IdType).IsRequired();
                 entity.Property(a => a.IdUser).IsRequired();
                 entity.Property(a => a.LikeCourse).HasDefaultValue(false);
+
+               
             });
 
             base.OnModelCreating(modelBuilder);

@@ -46,6 +46,7 @@ namespace ProgrammingCode.Service.Repository
 		{
 			try
 			{
+				var d  = await  db.MyClassTables.ToListAsync();
 				var query = await (from myClass in db.MyClassTables
 								   join course in db.CourseTables on myClass.IdCourse equals course.IdCourse
 								   join image in db.ImagesClassTables on myClass.IdImageClass equals image.IdImageClass
