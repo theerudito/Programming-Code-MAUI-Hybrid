@@ -28,25 +28,5 @@ namespace ProgrammingCode.Service.Repository
 				return false;
 			}			
 		}
-
-        public async Task<bool> DeleteDataUser(int idUser)
-        {
-            try
-            {
-                var query = await db.ClassTables.Where(x => x.IdUser == idUser).ToListAsync();                                   
-
-                if (query is null) return false;
-                { 
-                    db.ClassTables.RemoveRange(query);
-                    await db.SaveChangesAsync();
-                    return true;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
-        }
     }
 }

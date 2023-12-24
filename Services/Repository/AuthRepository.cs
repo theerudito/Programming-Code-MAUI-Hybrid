@@ -166,25 +166,5 @@ namespace ProgrammingCode.Service.Repository
 				return false;
 			}
 		}
-
-		public async Task<bool> DeleteAuth(int idUserDto)
-		{
-			try
-			{
-				var query = await db.AuthTables.FindAsync(idUserDto);
-
-				if (query is null) return false;
-				{
-					db.AuthTables.Remove(query);
-					await db.SaveChangesAsync();
-					return true;
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
-				return false;
-			}
-		}
 	}
 }

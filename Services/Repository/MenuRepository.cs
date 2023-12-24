@@ -71,20 +71,5 @@ namespace ProgrammingCode.Service.Repository
 			}
 		}
 	
-		public async Task<bool> DeleteMenuUser(int idUserDto)
-		{
-            try
-			{
-                var data = await db.AuthMenuTables.Where(x => x.IdUser == idUserDto).ToListAsync();
-                db.AuthMenuTables.RemoveRange(data);
-                await db.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception e)
-			{
-                Console.WriteLine(e.Message);
-                return false;
-            }
-        }
 	}
 }

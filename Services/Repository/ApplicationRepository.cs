@@ -107,26 +107,6 @@ namespace ProgrammingCode.Service.Repository
 			}
 		}
 
-		public async Task<bool> DeleteDataApplication(int idUserDto)
-		{
-			try
-			{
-				var query = await db.ApplicationTables.Where(u => u.IdUser == idUserDto).ToListAsync();
-
-				if (query is null) return false;
-				{
-					db.ApplicationTables.RemoveRange(query);
-					await db.SaveChangesAsync();
-					return true;
-				}
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine(e.Message);
-				return false;
-			}
-		}
-
 		public async Task<bool> LikeCourse(int idApplicationDto)
 		{
 			try

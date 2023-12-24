@@ -2,11 +2,11 @@
 using Blazorise.Bootstrap;
 using Microsoft.Extensions.Logging;
 using ProgrammingCode.Data;
-using ProgrammingCode.Helpers;
 using ProgrammingCode.Service.Another;
 using ProgrammingCode.Service.Interface;
 using ProgrammingCode.Service.Repository;
 using ProgrammingCode.Services.Another;
+using ProgrammingCode.Services.Repository;
 
 namespace ProgrammingCode
 {
@@ -48,9 +48,7 @@ namespace ProgrammingCode
 			builder.Services.AddSingleton<RoleRepository>();
 			builder.Services.AddSingleton<MyClassRepository>();
 			builder.Services.AddSingleton<My_Class_Repository>();
-
-			//builder.Services.AddTransient<MainPage>();
-
+            builder.Services.AddSingleton<DataUserRepository>();
 
             builder.Services.AddMauiBlazorWebView();
 

@@ -13,7 +13,5 @@ namespace ProgrammingCode.Service.Interface
 		Task<bool> LoginAuth(AuthDto idUserDto);
 
 		Task<bool> PutAuth(AuthDto userDto, int idUserDto);
-
-		Task<bool> DeleteAuth(int idUserDto);
 	}
 }

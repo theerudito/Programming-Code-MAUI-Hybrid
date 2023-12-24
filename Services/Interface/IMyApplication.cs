@@ -10,8 +10,6 @@ namespace ProgrammingCode.Service.Interface
 
 		Task<bool> PutDataApplication(ApplicationDto myApplicationDto, int idApplicationDto);
 
-		Task<bool> DeleteDataApplication(int idUserDto);
-
 		Task<bool> LikeCourse(int idApplicationDto);
 
 		Task<bool> ScoreCourse(int idApplicationDto);

@@ -3,6 +3,7 @@ using ProgrammingCode.Helpers;
 using ProgrammingCode.Service.Another;
 using ProgrammingCode.Service.Interface;
 using ProgrammingCode.Service.Repository;
+using ProgrammingCode.Services.Repository;
 
 namespace ProgrammingCode.Pages.About
 {
@@ -11,16 +12,7 @@ namespace ProgrammingCode.Pages.About
 		private string IdUser;
 
 		[Inject]
-		private IMyApplication IMyApplication { get; set; } = null!;
-
-		[Inject]
-		private IAuth IAuth { get; set; } = null!;
-
-        [Inject]
-        private My_Class_Repository MyClass { get; set; } = null!;
-
-        [Inject]
-        private IMenu IMenu { get; set; } = null!;
+		private DataUserRepository DataUserRepository { get; set; } = null!;
        
         [Inject]
 		private LanguageService LanguageService { get; set; } = null!;
@@ -45,10 +37,10 @@ namespace ProgrammingCode.Pages.About
 				 : await App.Current.MainPage.DisplayAlert("Programming Code", "Estas Seguro que quieres borrar tu cuenta esto es irrebesible?", "SI", "NO"))
 			{
 				LocalStorageDataApp.RemoveItem();
-                await IAuth.DeleteAuth(Convert.ToInt32(IdUser));
-				await IMenu.DeleteMenuUser(Convert.ToInt32(IdUser));
-                await IMyApplication.DeleteDataApplication(Convert.ToInt32(IdUser));
-                await MyClass.DeleteDataUser(Convert.ToInt32(IdUser));
+                await DataUserRepository.AuthUser(Convert.ToInt32(IdUser));
+				await DataUserRepository.ApplicationUser(Convert.ToInt32(IdUser));
+                await DataUserRepository.MenuAuthUser(Convert.ToInt32(IdUser));
+                await DataUserRepository.ClassUser(Convert.ToInt32(IdUser));
                 NavigationManagerApp._inHome = false;
 				Navigation.NavigateTo("/auth");
 			}
