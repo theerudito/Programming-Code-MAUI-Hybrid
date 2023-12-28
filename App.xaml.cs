@@ -6,13 +6,22 @@ namespace ProgrammingCode
 	{
 		public App()
 		{
-			InitializeComponent();
 
-			InitialValues.AddRole();
-			InitialValues.Menu();
+            InitializeComponent();
+
+			//InitialValuesTest.AddRole();
+   //         InitialValuesTest.Menu();
+   //         InitialValuesTest.AddType();
+   //         InitialValuesTest.AddImagesClass();
+
+
+            InitialValues.AddRole();
+            InitialValues.Menu();
             InitialValues.AddType();
-
-            //InitialValues.AddImagesClass();
+            InitialValues.AddImagesClass();
+			InitialValues.AddImagesCourse();
+			InitialValues.AddCourse();
+            InitialValues.AddMyClass();
 
             MainPage = new MainPage();
 		}

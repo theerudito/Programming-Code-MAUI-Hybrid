@@ -61,25 +61,12 @@ namespace ProgrammingCode.Service.Repository
 		{
 			try
 			{
-                string nameDataBase = "Programming_Codeddgg.db";
-
-                var directorySource = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), nameDataBase);
-                var directoryCopy = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), nameDataBase); 
-                if (File.Exists(directorySource))
-                {
-                    File.Copy(directorySource, directoryCopy, true);
-                    
-                }
-
                 string userAdmin = "theboss";
-
 
                 var myrole = await db.RoleTables.ToListAsync();
 
-				
-
 				 var query = await  db.AuthTables
-					.Where(u => u.UserName == userDto.UserName || u.Email == userDto.Email)
+					.Where(u => u.UserName == userDto.UserName.ToLower() || u.Email == userDto.Email.ToLower())
 					.FirstOrDefaultAsync();
 				
 				if (query != null) return false;
@@ -88,8 +75,8 @@ namespace ProgrammingCode.Service.Repository
 					var newUser = new AuthTable
 					{
 						Name = userDto.Name,
-						UserName = userDto.UserName,
-						Email = userDto.Email,
+						UserName = userDto.UserName.ToLower(),
+						Email = userDto.Email.ToLower(),
 						Password = BcryManager.HashPassword(userDto.Password),
 						IdRole = userDto.UserName == userAdmin ? 1 : 2
 					};
@@ -97,7 +84,7 @@ namespace ProgrammingCode.Service.Repository
 					db.AuthTables.Add(newUser);
 					await db.SaveChangesAsync();
 
-					var findUser = await db.AuthTables.Where(u => u.UserName == userDto.UserName).FirstOrDefaultAsync();
+					var findUser = await db.AuthTables.Where(u => u.UserName == userDto.UserName.ToLower()).FirstOrDefaultAsync();
 					
 					if (findUser == null) return false;
 					{
@@ -123,7 +110,7 @@ namespace ProgrammingCode.Service.Repository
 		{
 			try
 			{
-				var query = await db.AuthTables.Where(u => u.UserName == userDto.UserName).FirstOrDefaultAsync();
+				var query = await db.AuthTables.Where(u => u.UserName == userDto.UserName.ToLower()).FirstOrDefaultAsync();
 				
 				if (query == null) return false;
 				{

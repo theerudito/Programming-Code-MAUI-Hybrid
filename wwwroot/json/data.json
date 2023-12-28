@@ -6,159 +6,48 @@
       "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
       "imageBase64": "",
       "refImage": "00757526-C17F-4C6D-986D-BBC45E51A00D"
-    },
-    {
-      "idImageClass": 3,
-      "nameImage": "Variables",
-      "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
-      "imageBase64": "",
-      "refImage": "4580e771-90fc-4068-85cc-733afdc5a4d9"
-    },
-    {
-      "idImageClass": 4,
-      "nameImage": "Variables",
-      "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
-      "imageBase64": "",
-      "refImage": "0384a246-f9c5-46d3-9a9a-68ac849cc0d2"
-    },
-    {
-      "idImageClass": 5,
-      "nameImage": "Variables",
-      "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
-      "imageBase64": "",
-      "refImage": "cf425e3b-30c4-47a4-b406-73740f506537"
-    },
-    {
-      "idImageClass": 2,
-      "nameImage": "Tipo De Datos",
-      "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
-      "imageBase64": "",
-      "refImage": "8ddf8339-ad3a-427e-a900-aaee64e7eaca"
-    },
-    {
-      "idImageClass": 6,
-      "nameImage": "imgrewr",
-      "imageUrl": "https://w0.peakpx.com/wallpaper/596/83/HD-wallpaper-jujutsu-kaisen-gojo-satoru-itadori-jujutsu-kaisen-toge.jpg",
-      "imageBase64": "",
-      "refImage": "E07C6FD2-0C52-4F86-A9B1-85EFF3EB9700"
-    },
-    {
-      "idImageClass": 7,
-      "nameImage": "variablesgo",
-      "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
-      "imageBase64": "",
-      "refImage": "D75E15EA-8BE5-4D9F-BB42-D1AF60B8E969"
     }
   ],
- [
-      {
-        "idImageCourse": 3,
-        "nameImage": "imgReact",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg",
-        "imageBase64": "",
-        "refImage": "82545712-266f-417a-9ca5-6da2972bd018"
-      },
-      {
-        "idImageCourse": 2,
-        "nameImage": "imgJavaScript",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/320px-Unofficial_JavaScript_logo_2.svg.png",
-        "imageBase64": "",
-        "refImage": "914C8F08-2342-4BF4-9416-7A352E0E1985"
-      },
-      {
-        "idImageCourse": 4,
-        "nameImage": "imgPostgress",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
-        "imageBase64": "",
-        "refImage": "b4ad42cf-25ee-4537-b957-9ef6fdbf3a58"
-      },
-      {
-        "idImageCourse": 5,
-        "nameImage": "imgBlazor",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Blazor.png/250px-Blazor.png",
-        "imageBase64": "",
-        "refImage": "b657d210-90cc-4fe3-b514-ef5cc6250a7d"
-      },
-      {
-        "idImageCourse": 1,
-        "nameImage": "imgC#",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Logo_C_sharp.svg",
-        "imageBase64": "",
-        "refImage": "702AA4C4-3076-4C24-92F6-00E877590E57"
-      },
-      {
-        "idImageCourse": 7,
-        "nameImage": "imgPython",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
-        "imageBase64": "",
-        "refImage": "61F6796C-B793-400F-9812-C14E2478C62F"
-      },
-      {
-        "idImageCourse": 10,
-        "nameImage": "imgC++",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
-        "imageBase64": "",
-        "refImage": "9F5F7394-419A-4BE8-89BD-CDE0333DCBAC"
-      },
-      {
-        "idImageCourse": 12,
-        "nameImage": "imgGo",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg",
-        "imageBase64": "",
-        "refImage": "07200126-AAFC-4D7D-B544-9D5569A8D676"
-      },
-      {
-        "idImageCourse": 11,
-        "nameImage": "imgGo1",
-        "imageUrl": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
-        "imageBase64": "",
-        "refImage": "E27F7988-5306-4F3E-BE1C-45A102AF9571"
-      }
-    ],
-[
-      {
-        "idMenu": 1,
-        "nameMenu": "Home",
-        "link": "/"
-      },
-      {
-        "idMenu": 2,
-        "nameMenu": "About",
-        "link": "/about"
-      },
-      {
-        "idMenu": 3,
-        "nameMenu": "Add Course",
-        "link": "/addCourse"
-      },
-      {
-        "idMenu": 4,
-        "nameMenu": "Add Class",
-        "link": "/addClass"
-      }
-    ],
- [
-      {
-        "idRole": 1,
-        "role": "Admin"
-      },
-      {
-        "idRole": 2,
-        "role": "Visitor"
-      }
-    ],
- [
-      {
-        "idType": 1,
-        "name": "Basic"
-      },
-      {
-        "idType": 2,
-        "name": "Intermediate"
-      },
-      {
-        "idType": 3,
-        "name": "Advanced"
-      }
-    ]
+  [
+    {
+      "idImageCourse": 1,
+      "nameImage": "imgReact",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg",
+      "imageBase64": "",
+      "refImage": "82545712-266f-417a-9ca5-6da2972bd018"
+    }
+  ],
+  [
+    {
+      "idCourse": 1,
+      "nameCourse": "React",
+      "idImageCourse": 1,
+      "idType": 1,
+      "selectedCourse": false
+    }
+  ],
+  [
+    {
+      "idClass": 1,
+      "titleOne": "test One",
+      "titleTwo": "Variables",
+      "infoClass": "Variables",
+      "codeClass": "Variables",
+      "linkRef": "Variables",
+      "idCourse": 1,
+      "idImageClass": 1,
+      "idType": 1
+    },
+    {
+      "idClass": 2,
+      "titleOne": "test Two",
+      "titleTwo": "Variables",
+      "infoClass": "Variables",
+      "codeClass": "Variables",
+      "linkRef": "Variables",
+      "idCourse": 1,
+      "idImageClass": 1,
+      "idType": 1
+    }
+  ]
 ]

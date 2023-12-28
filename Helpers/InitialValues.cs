@@ -5,42 +5,13 @@ namespace ProgrammingCode.Helpers
 {
 	public class InitialValues
 	{
-
-		public static void AddImagesClass()
+        public static void AddRole()
 		{
 			var db = new ApplicationContextDB();
 
-			var countImages  = db.ImagesClassTables.Count();
+			var query = db.RoleTables.Where(r => r.IdRole == 1).FirstOrDefault();
 
-			var json = JSONManager.ReadJSON();
-
-			var countData = json[0].Count();
-
-			if (countImages == countData) return;
-			{
-				var myImages = json.FirstOrDefault()!.Select(item => new ImagesClassTable
-				{
-					IdImageClass = Convert.ToInt16(item.ContainsKey("idImageClass")),
-					NameImage = item.ContainsKey("nameImage").ToString(),
-					ImageUrl = item.ContainsKey("imageUrl").ToString(),
-					RefImage = item.ContainsKey("refImage").ToString(),
-					ImageBase64 = item.ContainsKey("imageBase64").ToString(),
-
-				}).ToList();
-
-                db.ImagesClassTables.AddRange(myImages!);
-
-				db.SaveChanges();
-				
-			}
-		}
-
-		public static void AddRole()
-		{
-			var db = new ApplicationContextDB();
-			var newData = 2;
-			var query = db.RoleTables.Count();
-			if (newData > query)
+			if (query != null) return;
 			{
 				var newRoles = new List<RoleTable>
 					{
@@ -50,45 +21,16 @@ namespace ProgrammingCode.Helpers
 
 				db.RoleTables.AddRange(newRoles);
 				db.SaveChanges();
-			} else
-			{
-				return;
-			}
-
-			
+			} 
 		}
 	
-		public static void AddType()
-		{
-            var db = new ApplicationContextDB();
-            var newData = 3;
-            var query = db.TypeCourseTables.Count();
-
-			if (newData > query)
-			{
-                var newTypes = new List<TypeCourseTable>
-				{
-					new TypeCourseTable { IdType = 1, Name = "Basic"},
-					new TypeCourseTable { IdType = 2, Name = "Intermediate"},
-                    new TypeCourseTable { IdType = 3, Name = "Advanced"},
-                };
-
-                db.TypeCourseTables.AddRange(newTypes);
-                db.SaveChanges();
-            }
-            else
-			{
-                return;
-            }
-		}
-		
 		public static void Menu()
 		{
             var db = new ApplicationContextDB();
-            var newData = 4;
-            var query = db.MenuTables.Count();
+            
+            var query = db.MenuTables.Where(menu => menu.IdMenu == 1).FirstOrDefault();
 
-            if (newData > query) 
+            if (query != null)  return;
 			{
                 var menu = new List<MenuTable>()
                 {
@@ -102,5 +44,185 @@ namespace ProgrammingCode.Helpers
                 db.SaveChanges();
             }               
         }
-	}
+        
+        public static void AddType()
+        {
+            var db = new ApplicationContextDB();
+
+            var query = db.TypeCourseTables.Where(type => type.IdType == 1).FirstOrDefault();
+
+            if (query != null) return;
+            {
+                var newTypes = new List<TypeCourseTable>
+                {
+                    new TypeCourseTable { IdType = 1, Name = "Basic"},
+                    new TypeCourseTable { IdType = 2, Name = "Intermediate"},
+                    new TypeCourseTable { IdType = 3, Name = "Advanced"},
+                };
+
+                db.TypeCourseTables.AddRange(newTypes);
+                db.SaveChanges();
+            }
+        }
+
+        public static void AddImagesClass()
+        {
+            var db = new ApplicationContextDB();
+
+            var countImages = db.ImagesClassTables.Count();
+
+            var json = JSONManager.ReadJSON();
+
+            var dataFromJson = json[0]
+                .Select(item => new ImagesClassTable
+                {
+                    IdImageClass = int.Parse(item["idImageClass"]),
+                    NameImage = item["nameImage"],
+                    ImageUrl = item["imageUrl"],
+                    ImageBase64 = item["imageBase64"],
+                    RefImage = item["refImage"]
+                })
+                .ToList();
+
+            if (countImages == dataFromJson.Count)
+            {
+                return;
+            }
+
+            List<ImagesClassTable> imagesClass = new List<ImagesClassTable>();
+
+            foreach (var image in dataFromJson)
+            {
+                if (!db.ImagesClassTables.Any(i => i.IdImageClass == image.IdImageClass))
+                {
+                    imagesClass.Add(image);
+                }
+            }
+
+            db.ImagesClassTables.AddRange(imagesClass);
+
+            Task.Run(() => db.SaveChangesAsync());
+        }
+
+        public static void AddImagesCourse()
+        {
+            var db = new ApplicationContextDB();
+
+            var countImages = db.ImagesCoursesTables.Count();
+
+            var json = JSONManager.ReadJSON();
+
+            var dataFromJson = json[1]
+                .Select(item => new ImagesCoursesTable
+                {
+                    IdImageCourse = int.Parse(item["idImageCourse"]),
+                    NameImage = item["nameImage"],
+                    ImageUrl = item["imageUrl"],
+                    RefImage = item["refImage"],
+                    ImageBase64 = item["imageBase64"]
+                })
+                .ToList();
+
+            if (countImages == dataFromJson.Count)
+            {
+                return;
+            }
+
+            List<ImagesCoursesTable> imagesCourse = new List<ImagesCoursesTable>();
+
+            foreach (var image in dataFromJson)
+            {
+                if (!db.ImagesCoursesTables.Any(i => i.IdImageCourse == image.IdImageCourse))
+                {
+                    imagesCourse.Add(image);
+                }
+            }
+
+            db.ImagesCoursesTables.AddRange(imagesCourse);
+
+            Task.Run(() => db.SaveChangesAsync());
+        }
+
+        public static void AddCourse()
+        {
+            var db = new ApplicationContextDB();
+
+            var countCourse = db.CourseTables.Count();
+
+            var json = JSONManager.ReadJSON();
+
+            var myCourseFromJson = json[2]
+                .Select(item => new CourseTable
+                {
+                    IdCourse = int.Parse(item["idCourse"]),
+                    Name = item["nameCourse"],
+                    IdImageCourse = int.Parse(item["idImageCourse"]),
+                    IdType = int.Parse(item["idType"]),
+                    SelectedCourse = bool.Parse(item["selectedCourse"])
+                })
+                .ToList();
+
+            if (countCourse == myCourseFromJson.Count)
+            {
+                return;
+            }
+
+            List<CourseTable> myCourse = new List<CourseTable>();
+
+            foreach (var course in myCourseFromJson)
+            {
+                if (!db.CourseTables.Any(c => c.IdCourse == course.IdCourse))
+                {
+                    myCourse.Add(course);
+                }
+            }
+
+            db.CourseTables.AddRange(myCourse);
+
+            Task.Run(() => db.SaveChangesAsync());
+        }
+
+        public static void AddMyClass()
+        {
+            var db = new ApplicationContextDB();
+
+            var countMyClass = db.MyClassTables.Count();
+
+            var json = JSONManager.ReadJSON();
+
+            var myClassFromJson = json[3]
+                .Select(item => new MyClassTable
+                {
+                    IdClass = int.Parse(item["idClass"]),
+                    TitleOne = item["titleOne"],
+                    TitleTwo = item["titleTwo"],
+                    InfoClass = item["infoClass"],
+                    CodeClass = item["codeClass"],
+                    LinkRef = item["linkRef"],
+                    IdCourse = int.Parse(item["idCourse"]),
+                    IdImageClass = int.Parse(item["idImageClass"]),
+                    IdType = int.Parse(item["idType"])
+                })
+                .ToList();
+
+            if (countMyClass == myClassFromJson.Count)
+            {
+                return;
+            }
+
+            List<MyClassTable> myClass = new List<MyClassTable>();
+
+            foreach (var item in myClassFromJson)
+            {
+                if (!db.MyClassTables.Any(c => c.IdClass == item.IdClass))
+                {
+                    myClass.Add(item);
+                }
+            }
+
+            db.MyClassTables.AddRange(myClass);
+
+            Task.Run(() => db.SaveChangesAsync());
+        }
+    }
 }
