@@ -9,21 +9,22 @@ namespace ProgrammingCode
 
             InitializeComponent();
 
-            //InitialValuesTest.AddRole();
-            //InitialValuesTest.Menu();
-            //InitialValuesTest.AddType();
+            InitialValuesTest.AddRole();
+            InitialValuesTest.Menu();
+            InitialValuesTest.AddUser();
+            InitialValuesTest.AddType();
             //InitialValuesTest.AddImagesClass();
             //InitialValues.AddImagesCourse();
             //InitialValues.AddCourse();
             //InitialValues.AddMyClass();
 
-            InitialValues.AddRole();
-            InitialValues.Menu();
-            InitialValues.AddType();
-            InitialValues.AddImagesClass();
-			InitialValues.AddImagesCourse();
-			InitialValues.AddCourse();
-            InitialValues.AddMyClass();
+            //         InitialValues.AddRole();
+            //         InitialValues.Menu();
+            //         InitialValues.AddType();
+            //         InitialValues.AddImagesClass();
+            //InitialValues.AddImagesCourse();
+            //InitialValues.AddCourse();
+            //         InitialValues.AddMyClass();
 
             MainPage = new MainPage();
 		}

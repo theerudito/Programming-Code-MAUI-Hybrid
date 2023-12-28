@@ -25,6 +25,44 @@ namespace ProgrammingCode.Helpers
             }
         }
 
+        public static void AddUser()
+        {
+            var db = new ApplicationContextDB();
+            var query = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
+
+            if (query != null) return;
+            {
+                var user = new AuthTable
+                {
+                    IdUser = 1,
+                    Name = "test",
+                    UserName = "test",
+                    Email = "test@gmail.com",
+                    Password = BcryManager.HashPassword("test"),
+                    IdRole = 2
+                };
+
+                db.AuthTables.Add(user);
+                db.SaveChanges();
+
+                var findUser = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();    
+
+                if (findUser != null)
+                {
+                    var menuAuth = new List<AuthMenuTable>
+                    {
+                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 1 },
+                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 2 },
+                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 3 },
+                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 4 },
+                    };
+                    
+                    db.AuthMenuTables.AddRange(menuAuth);
+                    db.SaveChanges();
+                }
+            }
+        }
+      
         public static void AddType()
         {
             var db = new ApplicationContextDB();
@@ -72,7 +110,6 @@ namespace ProgrammingCode.Helpers
 
             
         }
-
 
         public static void AddImagesCourse()
         {
