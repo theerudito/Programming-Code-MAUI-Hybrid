@@ -9,11 +9,13 @@ namespace ProgrammingCode
 
             InitializeComponent();
 
-			//InitialValuesTest.AddRole();
-   //         InitialValuesTest.Menu();
-   //         InitialValuesTest.AddType();
-   //         InitialValuesTest.AddImagesClass();
-
+            //InitialValuesTest.AddRole();
+            //InitialValuesTest.Menu();
+            //InitialValuesTest.AddType();
+            //InitialValuesTest.AddImagesClass();
+            //InitialValues.AddImagesCourse();
+            //InitialValues.AddCourse();
+            //InitialValues.AddMyClass();
 
             InitialValues.AddRole();
             InitialValues.Menu();

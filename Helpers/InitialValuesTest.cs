@@ -72,5 +72,21 @@ namespace ProgrammingCode.Helpers
 
             
         }
+
+
+        public static void AddImagesCourse()
+        {
+            var db = new ApplicationContextDB();          
+        }
+
+        public static void AddCourse()
+        {
+            var db = new ApplicationContextDB();
+        }
+
+        public static void AddMyClass()
+        {
+            var db = new ApplicationContextDB();
+        }
     }
 }
