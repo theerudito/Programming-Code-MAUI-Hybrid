@@ -1,4 +1,5 @@
 ﻿using ProgrammingCode.Data;
+using ProgrammingCode.Models.Dto;
 using ProgrammingCode.Models.Entity;
 
 namespace ProgrammingCode.Helpers
@@ -152,13 +153,18 @@ namespace ProgrammingCode.Helpers
             var json = JSONManager.ReadJSON();
 
             var myCourseFromJson = json[2]
-                .Select(item => new CourseTable
+                .Select(item => new CourseDto
                 {
                     IdCourse = int.Parse(item["idCourse"]),
-                    Name = item["nameCourse"],
                     IdImageCourse = int.Parse(item["idImageCourse"]),
                     IdType = int.Parse(item["idType"]),
-                    SelectedCourse = bool.Parse(item["selectedCourse"])
+                    Name = item["name"],
+                    TypeName = item["typeName"],
+                    SelectedCourse = bool.Parse(item["selectedCourse"]),
+                    NameImage = item["nameImage"],
+                    ImageUrl = item["imageUrl"],
+                    ImageBase64 = item["imageBase64"],
+                    RefImage = item["refImage"],
                 })
                 .ToList();
 
@@ -173,7 +179,16 @@ namespace ProgrammingCode.Helpers
             {
                 if (!db.CourseTables.Any(c => c.IdCourse == course.IdCourse))
                 {
-                    myCourse.Add(course);
+
+
+                    myCourse.Add(new CourseTable 
+                    { 
+                        IdCourse = course.IdCourse,
+                        IdImageCourse = course.IdImageCourse,
+                        IdType = course.IdType,
+                        Name = course.Name,
+                        SelectedCourse = course.SelectedCourse,
+                    });
                 }
             }
 
@@ -191,7 +206,7 @@ namespace ProgrammingCode.Helpers
             var json = JSONManager.ReadJSON();
 
             var myClassFromJson = json[3]
-                .Select(item => new MyClassTable
+                .Select(item => new MyClassDto
                 {
                     IdClass = int.Parse(item["idClass"]),
                     TitleOne = item["titleOne"],
@@ -216,7 +231,18 @@ namespace ProgrammingCode.Helpers
             {
                 if (!db.MyClassTables.Any(c => c.IdClass == item.IdClass))
                 {
-                    myClass.Add(item);
+                    myClass.Add(new MyClassTable 
+                    { 
+                        IdClass = item.IdClass,
+                        TitleOne = item.TitleOne,
+                        TitleTwo = item.TitleTwo,
+                        InfoClass = item.InfoClass,
+                        CodeClass = item.CodeClass,
+                        LinkRef = item.LinkRef,
+                        IdCourse = item.IdCourse,
+                        IdImageClass = item.IdImageClass,
+                        IdType = item.IdType,
+                    });
                 }
             }
 

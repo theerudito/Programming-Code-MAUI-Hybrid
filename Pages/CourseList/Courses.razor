@@ -17,8 +17,9 @@
             <div class="containerCard">
                 <div class="containerTitle">
                     <p>@item.TitleCourse</p>
-                    <span>@item.ScoreCourse%  @((@item.ScoreCourse >= 100) 
-                        ? LanguageService.CompleteLabel
+                    <span>
+                        @item.ScoreCourse.ToString("F0")%  @((@item.ScoreCourse >= 100)
+                ? LanguageService.CompleteLabel
                         : LanguageService.IncompleteLabel)
                     </span>
 

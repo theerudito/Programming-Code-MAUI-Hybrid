@@ -4,7 +4,7 @@ public partial class ApplicationTable
 {
 	public int IdApplication { get; set; }
 
-	public int ScoreCourse { get; set; } = 0;
+	public double ScoreCourse { get; set; } = 0;
 
 	public int IdCourse { get; set; }
 	public CourseTable Courses { get; set; } = null!;

@@ -12,8 +12,8 @@
                         <div class="containerTitleMyClass" @onclick="() => OpenMyClass(item.IdClass)">
                             <h5>@item.TitleOne</h5>
                             <i class='@((IdClass == item.IdClass)
-                                    ? "bi bi-folder2" 
-                                    : "bi bi-folder-x")'
+                                    ? "bi bi-folder-x "
+                                    : "bi bi-folder2")'
                                     @onclick="() => OpenMyClass(item.IdClass)"></i>
                         </div>
 
@@ -26,7 +26,7 @@
                                         : item.ImageUrl) " alt="code">
                             </div>
                             <div class="containerMyClassControls">
-                                <button @onclick="() => LauncherManager.OpenBrowser(item.LinkRef)"><i class="bi bi-info-circle"></i></button>
+                            <button @onclick="() => openBrowser(item.LinkRef)"><i class="bi bi-info-circle"></i></button>
                                 <button @onclick="() => BtnNextClass(item.IdClass)"><i class='@((completeClass == true) ?  "bi bi-hand-thumbs-up-fill" :  "bi bi-hand-index-thumb-fill")'></i></button>
                             </div>
                         </div>

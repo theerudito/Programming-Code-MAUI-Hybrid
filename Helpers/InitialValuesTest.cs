@@ -107,8 +107,6 @@ namespace ProgrammingCode.Helpers
         public static void AddImagesClass()
         {
             var db = new ApplicationContextDB();
-
-            
         }
 
         public static void AddImagesCourse()

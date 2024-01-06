@@ -66,5 +66,11 @@ namespace ProgrammingCode.Pages.MyClass
 			this.IdClass = IdClass;
 			completeClass = false;
 		}
+
+		private void openBrowser(string url)
+		{
+			if (string.IsNullOrEmpty(url)) return;
+            LauncherManager.OpenBrowser(url);           
+		}
 	}
 }

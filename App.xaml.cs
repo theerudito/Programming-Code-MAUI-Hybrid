@@ -13,18 +13,20 @@ namespace ProgrammingCode
             InitialValuesTest.Menu();
             InitialValuesTest.AddUser();
             InitialValuesTest.AddType();
-            //InitialValuesTest.AddImagesClass();
+            InitialValuesTest.AddImagesClass();
+            InitialValues.AddImagesCourse();
+            InitialValues.AddCourse();
+            InitialValues.AddMyClass();
+
+
+
+            //InitialValues.AddRole();
+            //InitialValues.Menu();
+            //InitialValues.AddType();
+            //InitialValues.AddImagesClass();
             //InitialValues.AddImagesCourse();
             //InitialValues.AddCourse();
             //InitialValues.AddMyClass();
-
-            //         InitialValues.AddRole();
-            //         InitialValues.Menu();
-            //         InitialValues.AddType();
-            //         InitialValues.AddImagesClass();
-            //InitialValues.AddImagesCourse();
-            //InitialValues.AddCourse();
-            //         InitialValues.AddMyClass();
 
             MainPage = new MainPage();
 		}

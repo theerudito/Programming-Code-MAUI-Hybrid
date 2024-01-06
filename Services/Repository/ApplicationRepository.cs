@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProgrammingCode.Data;
+using ProgrammingCode.Helpers;
 using ProgrammingCode.Models.Dto;
 using ProgrammingCode.Models.Entity;
 using ProgrammingCode.Service.Interface;
@@ -141,11 +142,13 @@ namespace ProgrammingCode.Service.Repository
 
 					var maxScore = 100;
 
-					var score = maxScore / quantityClass;
- 
+                    double score = (double)maxScore / quantityClass;
+
                     query.ScoreCourse += score;
 
                     if (query.ScoreCourse > maxScore) query.ScoreCourse = maxScore;
+                    if (query.ScoreCourse > 99) query.ScoreCourse = maxScore;
+
                     await db.SaveChangesAsync();
                     return true;
                 }
