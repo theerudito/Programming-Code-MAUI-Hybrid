@@ -13,10 +13,10 @@ namespace ProgrammingCode
             InitialValuesTest.Menu();
             InitialValuesTest.AddUser();
             InitialValuesTest.AddType();
-            InitialValuesTest.AddImagesClass();
-            InitialValues.AddImagesCourse();
-            InitialValues.AddCourse();
-            InitialValues.AddMyClass();
+            //InitialValuesTest.AddImagesClass();
+            //InitialValues.AddImagesCourse();
+            //InitialValues.AddCourse();
+            //InitialValues.AddMyClass();
 
 
 

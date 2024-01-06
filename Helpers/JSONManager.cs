@@ -27,10 +27,10 @@ namespace ProgrammingCode.Helpers
             else
             {
                // Si el archivo no existe, retornar una lista vacía
-                return new List<List<Dictionary<string, string>>>();
+                //return new List<List<Dictionary<string, string>>>();
             }
 
-            //return new List<List<Dictionary<string, string>>>();
+            return new List<List<Dictionary<string, string>>>();
         }
     }
 }
