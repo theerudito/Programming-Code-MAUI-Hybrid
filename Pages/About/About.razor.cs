@@ -1,15 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
 using ProgrammingCode.Helpers;
 using ProgrammingCode.Service.Another;
-using ProgrammingCode.Service.Interface;
-using ProgrammingCode.Service.Repository;
 using ProgrammingCode.Services.Repository;
 
 namespace ProgrammingCode.Pages.About
 {
 	public partial class About
 	{
-		private string IdUser;
+		private string _idUser;
 
 		[Inject]
 		private DataUserRepository DataUserRepository { get; set; } = null!;
@@ -25,7 +23,7 @@ namespace ProgrammingCode.Pages.About
 
 		protected override async Task OnInitializedAsync()
 		{
-			IdUser = await LocalStorageDataApp.GetItem(LocalStorageDataApp.KeyIdUser);
+			_idUser = await LocalStorageDataApp.GetItem(LocalStorageDataApp.KeyIdUser);
 			LanguageService.ChangeLanguage += StateHasChanged;
 			ThemeService.ChangeTheme += StateHasChanged;
 		}
@@ -37,10 +35,10 @@ namespace ProgrammingCode.Pages.About
 				 : await App.Current.MainPage.DisplayAlert("Programming Code", "Estas Seguro que quieres borrar tu cuenta esto es irrebesible?", "SI", "NO"))
 			{
 				LocalStorageDataApp.RemoveItem();
-                await DataUserRepository.AuthUser(Convert.ToInt32(IdUser));
-				await DataUserRepository.ApplicationUser(Convert.ToInt32(IdUser));
-                await DataUserRepository.MenuAuthUser(Convert.ToInt32(IdUser));
-                await DataUserRepository.ClassUser(Convert.ToInt32(IdUser));
+                await DataUserRepository.AuthUser(Convert.ToInt32(_idUser));
+				await DataUserRepository.ApplicationUser(Convert.ToInt32(_idUser));
+                await DataUserRepository.MenuAuthUser(Convert.ToInt32(_idUser));
+                await DataUserRepository.ClassUser(Convert.ToInt32(_idUser));
                 NavigationManagerApp._inHome = false;
 				Navigation.NavigateTo("/auth");
 			}

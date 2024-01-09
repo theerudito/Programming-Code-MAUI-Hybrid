@@ -58,6 +58,16 @@
 
     </ItemGroup>
 
+
+	<ItemGroup>
+		<MauiResgen Include="wwwroot\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="wwwroot\json\data.json" />
+		<None Include="wwwroot\json\data.json" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+
     
 
     <ItemGroup>
