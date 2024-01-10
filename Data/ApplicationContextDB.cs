@@ -142,9 +142,9 @@ namespace ProgrammingCode.Data
                 entity.HasKey(mc => mc.IdClass).HasName("PK_MyClassTable");
                 entity.Property(mc => mc.TitleOne).IsRequired();
                 entity.Property(mc => mc.TitleTwo).IsRequired();
-                entity.Property(mc => mc.InfoClass).IsRequired();
+                entity.Property(mc => mc.InfoClass);
                 entity.Property(mc => mc.CodeClass);
-                entity.Property(mc => mc.LinkRef).IsRequired();
+                entity.Property(mc => mc.LinkRef);
                 entity.Property(mc => mc.IdType).IsRequired();
                 entity.Property(mc => mc.IdCourse).IsRequired();
                 entity.Property(mc => mc.IdImageClass).IsRequired();

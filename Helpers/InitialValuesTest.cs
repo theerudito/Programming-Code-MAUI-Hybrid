@@ -3,6 +3,7 @@ using ProgrammingCode.Helpers.MyData;
 using ProgrammingCode.Models.Entity;
 
 
+
 namespace ProgrammingCode.Helpers
 {
     public class InitialValuesTest
@@ -47,7 +48,7 @@ namespace ProgrammingCode.Helpers
                 db.AuthTables.Add(user);
                 db.SaveChanges();
 
-                var findUser = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();    
+                var findUser = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
 
                 if (findUser != null)
                 {
@@ -58,13 +59,13 @@ namespace ProgrammingCode.Helpers
                         new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 3 },
                         new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 4 },
                     };
-                    
+
                     db.AuthMenuTables.AddRange(menuAuth);
                     db.SaveChanges();
                 }
             }
         }
-      
+
         public static void AddType()
         {
             var db = new ApplicationContextDB();
@@ -110,6 +111,7 @@ namespace ProgrammingCode.Helpers
         {
             var db = new ApplicationContextDB();
 
+
             var query = db.ImagesClassTables.FirstOrDefault(ic => ic.IdImageClass == 1);
 
             if (query != null) return;
@@ -117,1123 +119,1123 @@ namespace ProgrammingCode.Helpers
             {
                 var newImageClass = new List<ImagesClassTable>
             {
-                new ImagesClassTable
-                {   IdImageClass = 1,
-                    NameImage = "imgJSI1",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI1,
-                },
-                new ImagesClassTable
-                {   IdImageClass = 2,
-                    NameImage = "imgJSI2",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI2,
-                },
-                new ImagesClassTable
-                {   IdImageClass = 3,
-                    NameImage = "imgJSI3",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI3,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 4,
-                    NameImage = "imgJSI4",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI4,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 5,
-                    NameImage = "imgJSI5",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI5,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 6,
-                    NameImage = "imgJSI6",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI6,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 7,
-                    NameImage = "imgJSI7",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI7,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 8,
-                    NameImage = "imgJSI8",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI8,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 9,
-                    NameImage = "imgJSI9",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI9,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 10,
-                    NameImage = "imgJSI10",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI10,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 11,
-                    NameImage = "imgJSI11",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI11,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 12,
-                    NameImage = "imgJSI12",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI12,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 13,
-                    NameImage = "imgJSI13",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI13,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 14,
-                    NameImage = "imgJSI14",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI14,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 15,
-                    NameImage = "imgJSI15",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI15,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 16,
-                    NameImage = "imgJSI16",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI16,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 17,
-                    NameImage = "imgJSI17",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI17,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 18,
-                    NameImage = "imgJSI18",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI18,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 19,
-                    NameImage = "imgJSI19",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI19,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 20,
-                    NameImage = "imgJSI20",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI20,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 21,
-                    NameImage = "imgJSI21",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI21,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 22,
-                    NameImage = "imgJSI22",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI22,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 23,
-                    NameImage = "imgJSI23",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI23,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 24,
-                    NameImage = "imgJSI24",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI24,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 25,
-                    NameImage = "imgJSI25",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI25,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 26,
-                    NameImage = "imgJSI26",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI26,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 27,
-                    NameImage = "imgJSI27",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI27,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 28,
-                    NameImage = "imgJSI28",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI28,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 29,
-                    NameImage = "imgJSI29",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI29,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 30,
-                    NameImage = "imgJSI30",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI30,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 31,
-                    NameImage = "imgJSI31",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI31,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 32,
-                    NameImage = "imgJSI32",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI32,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 33,
-                    NameImage = "imgJSI33",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI33,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 34,
-                    NameImage = "imgJSI34",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI34,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 35,
-                    NameImage = "imgJSI35",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI35,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 36,
-                    NameImage = "imgJSI36",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI36,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 37,
-                    NameImage = "imgJSI37",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI37,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 38,
-                    NameImage = "imgJSI38",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI38,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 39,
-                    NameImage = "imgJSI39",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI39,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 40,
-                    NameImage = "imgJSI40",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI40,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 41,
-                    NameImage = "imgJSI41",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI41,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 42,
-                    NameImage = "imgJSI42",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI42,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 43,
-                    NameImage = "imgJSI43",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI43,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 44,
-                    NameImage = "imgJSI44",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI44,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 45,
-                    NameImage = "imgJSI45",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI45,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 46,
-                    NameImage = "imgJSI46",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI46,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 47,
-                    NameImage = "imgJSI47",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI47,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 48,
-                    NameImage = "imgJSI48",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI48,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 49,
-                    NameImage = "imgJSI49",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI49,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 50,
-                    NameImage = "imgJSI50",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI50,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 51,
-                    NameImage = "imgJSI51",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI51,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 52,
-                    NameImage = "imgJSI52",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI52,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 53,
-                    NameImage = "imgJSI53",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI53,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 54,
-                    NameImage = "imgJSI54",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI54,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 55,
-                    NameImage = "imgJSI55",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI55,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 56,
-                    NameImage = "imgJSI56",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI56,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 57,
-                    NameImage = "imgJSI57",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI57,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 58,
-                    NameImage = "imgJSI58",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI58,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 59,
-                    NameImage = "imgJSI59",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI59,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 60,
-                    NameImage = "imgJSI60",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI60,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 61,
-                    NameImage = "imgJSI61",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI61,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 62,
-                    NameImage = "imgJSI62",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI62,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 63,
-                    NameImage = "imgJSI63",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI63,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 64,
-                    NameImage = "imgJSI64",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI64,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 65,
-                    NameImage = "imgJSI65",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI65,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 66,
-                    NameImage = "imgJSI66",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI66,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 67,
-                    NameImage = "imgJSI67",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI67,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 68,
-                    NameImage = "imgJSI68",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI68,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 69,
-                    NameImage = "imgJSI69",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI69,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 70,
-                    NameImage = "imgJSI70",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI70,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 71,
-                    NameImage = "imgJSI71",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI71,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 72,
-                    NameImage = "imgJSI72",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI72,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 73,
-                    NameImage = "imgJSI73",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI73,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 74,
-                    NameImage = "imgJSI74",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI74,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 75,
-                    NameImage = "imgJSI75",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI75,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 76,
-                    NameImage = "imgJSI76",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI76,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 77,
-                    NameImage = "imgJSI77",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI77,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 78,
-                    NameImage = "imgJSI78",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI78,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 79,
-                    NameImage = "imgJSI79",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI79,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 80,
-                    NameImage = "imgJSI80",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI80,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 81,
-                    NameImage = "imgJSI81",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI81,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 82,
-                    NameImage = "imgJSI82",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI82,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 83,
-                    NameImage = "imgJSI83",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI83,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 84,
-                    NameImage = "imgJSI84",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI84,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 85,
-                    NameImage = "imgJSI85",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI85,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 86,
-                    NameImage = "imgJSI86",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI86,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 87,
-                    NameImage = "imgJSI87",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI87,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 88,
-                    NameImage = "imgJSI88",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI88,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 89,
-                    NameImage = "imgJSI89",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI89,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 90,
-                    NameImage = "imgJSI90",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgJSI90,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 91,
-                    NameImage = "imgC#I1",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI1,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 92,
-                    NameImage = "imgC#I2",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI2,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 93,
-                    NameImage = "imgC#I3",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI3,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 94,
-                    NameImage = "imgC#I4",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI4,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 95,
-                    NameImage = "imgC#I5",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI5,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 96,
-                    NameImage = "imgC#I6",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI6,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 97,
-                    NameImage = "imgC#I7",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI7,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 98,
-                    NameImage = "imgC#I8",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI8,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 99,
-                    NameImage = "imgC#I9",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI9,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 100,
-                    NameImage = "imgC#I10",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI10,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 101,
-                    NameImage = "imgC#I11",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI11,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 102,
-                    NameImage = "imgC#I12",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI12,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 103,
-                    NameImage = "imgC#I13",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI13,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 104,
-                    NameImage = "imgC#I14",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI14,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 105,
-                    NameImage = "imgC#I15",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI15,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 106,
-                    NameImage = "imgC#I16",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI16,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 107,
-                    NameImage = "imgC#I17",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI17,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 108,
-                    NameImage = "imgC#I18",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI18,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 109,
-                    NameImage = "imgC#I19",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI19,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 110,
-                    NameImage = "imgC#I20",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI20,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 111,
-                    NameImage = "imgC#I21",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI21,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 112,
-                    NameImage = "imgC#I22",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI22,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 113,
-                    NameImage = "imgC#I23",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI23,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 114,
-                    NameImage = "imgC#I24",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI24,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 115,
-                    NameImage = "imgC#I25",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI25,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 116,
-                    NameImage = "imgC#I26",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI26,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 117,
-                    NameImage = "imgC#I27",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI27,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 118,
-                    NameImage = "imgC#I28",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI28,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 119,
-                    NameImage = "imgC#I29",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI29,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 120,
-                    NameImage = "imgC#I30",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI30,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 121,
-                    NameImage = "imgC#I31",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI31,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 122,
-                    NameImage = "imgC#I32",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI32,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 123,
-                    NameImage = "imgC#I33",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI33,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 124,
-                    NameImage = "imgC#I34",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI34,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 125,
-                    NameImage = "imgC#I35",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI35,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 126,
-                    NameImage = "imgC#I36",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI36,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 127,
-                    NameImage = "imgC#I37",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI37,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 128,
-                    NameImage = "imgC#I38",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI38,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 129,
-                    NameImage = "imgC#I39",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI39,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 130,
-                    NameImage = "imgC#I40",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI40,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 131,
-                    NameImage = "imgC#I41",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI41,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 132,
-                    NameImage = "imgC#I42",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI42,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 133,
-                    NameImage = "imgC#I43",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI43,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 134,
-                    NameImage = "imgC#I44",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI44,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 135,
-                    NameImage = "imgC#I45",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI45,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 136,
-                    NameImage = "imgC#I46",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI46,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 137,
-                    NameImage = "imgC#I47",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI47,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 138,
-                    NameImage = "imgC#I48",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI48,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 139,
-                    NameImage = "imgC#I49",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI49,
-                },
-                new ImagesClassTable
-                {
-                    IdImageClass = 140,
-                    NameImage = "imgC#I50",
-                    ImageUrl = "",
-                    RefImage = Guid.NewGuid().ToString().ToUpper(),
-                    ImageBase64 = MyDataImagesClass.imgCSI50,
-                },
+               new ImagesClassTable
+               {   IdImageClass = 1,
+                   NameImage = "imgJSI1",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[0].Name,
+               },
+               new ImagesClassTable
+               {   IdImageClass = 2,
+                   NameImage = "imgJSI2",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[1].Name,
+               },
+               new ImagesClassTable
+               {   IdImageClass = 3,
+                   NameImage = "imgJSI3",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[3].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 4,
+                   NameImage = "imgJSI4",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[4].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 5,
+                   NameImage = "imgJSI5",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[5].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 6,
+                   NameImage = "imgJSI6",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[6].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 7,
+                   NameImage = "imgJSI7",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[7].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 8,
+                   NameImage = "imgJSI8",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[8].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 9,
+                   NameImage = "imgJSI9",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[9].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 10,
+                   NameImage = "imgJSI10",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[10].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 11,
+                   NameImage = "imgJSI11",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[11].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 12,
+                   NameImage = "imgJSI12",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[12].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 13,
+                   NameImage = "imgJSI13",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[13].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 14,
+                   NameImage = "imgJSI14",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[14].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 15,
+                   NameImage = "imgJSI15",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[15].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 16,
+                   NameImage = "imgJSI16",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[16].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 17,
+                   NameImage = "imgJSI17",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[17].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 18,
+                   NameImage = "imgJSI18",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[18].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 19,
+                   NameImage = "imgJSI19",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[19].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 20,
+                   NameImage = "imgJSI20",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[20].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 21,
+                   NameImage = "imgJSI21",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[21].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 22,
+                   NameImage = "imgJSI22",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[22].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 23,
+                   NameImage = "imgJSI23",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[23].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 24,
+                   NameImage = "imgJSI24",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[24].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 25,
+                   NameImage = "imgJSI25",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[25].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 26,
+                   NameImage = "imgJSI26",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[26].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 27,
+                   NameImage = "imgJSI27",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[27].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 28,
+                   NameImage = "imgJSI28",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[28].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 29,
+                   NameImage = "imgJSI29",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[29].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 30,
+                   NameImage = "imgJSI30",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[30].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 31,
+                   NameImage = "imgJSI31",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[31].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 32,
+                   NameImage = "imgJSI32",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[32].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 33,
+                   NameImage = "imgJSI33",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[33].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 34,
+                   NameImage = "imgJSI34",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[34].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 35,
+                   NameImage = "imgJSI35",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[35].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 36,
+                   NameImage = "imgJSI36",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[36].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 37,
+                   NameImage = "imgJSI37",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[37].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 38,
+                   NameImage = "imgJSI38",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[38].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 39,
+                   NameImage = "imgJSI39",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[39].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 40,
+                   NameImage = "imgJSI40",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[40].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 41,
+                   NameImage = "imgJSI41",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[41].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 42,
+                   NameImage = "imgJSI42",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[42].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 43,
+                   NameImage = "imgJSI43",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[43].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 44,
+                   NameImage = "imgJSI44",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[44].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 45,
+                   NameImage = "imgJSI45",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[45].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 46,
+                   NameImage = "imgJSI46",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[46].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 47,
+                   NameImage = "imgJSI47",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[47].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 48,
+                   NameImage = "imgJSI48",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[48].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 49,
+                   NameImage = "imgJSI49",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[49].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 50,
+                   NameImage = "imgJSI50",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[50].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 51,
+                   NameImage = "imgJSI51",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[51].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 52,
+                   NameImage = "imgJSI52",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[52].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 53,
+                   NameImage = "imgJSI53",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[53].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 54,
+                   NameImage = "imgJSI54",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[54].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 55,
+                   NameImage = "imgJSI55",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[55].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 56,
+                   NameImage = "imgJSI56",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[56].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 57,
+                   NameImage = "imgJSI57",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[57].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 58,
+                   NameImage = "imgJSI58",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[58].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 59,
+                   NameImage = "imgJSI59",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[59].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 60,
+                   NameImage = "imgJSI60",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[60].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 61,
+                   NameImage = "imgJSI61",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[61].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 62,
+                   NameImage = "imgJSI62",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[62].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 63,
+                   NameImage = "imgJSI63",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[63].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 64,
+                   NameImage = "imgJSI64",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[64].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 65,
+                   NameImage = "imgJSI65",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[65].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 66,
+                   NameImage = "imgJSI66",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[66].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 67,
+                   NameImage = "imgJSI67",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[67].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 68,
+                   NameImage = "imgJSI68",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[68].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 69,
+                   NameImage = "imgJSI69",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[69].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 70,
+                   NameImage = "imgJSI70",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[70].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 71,
+                   NameImage = "imgJSI71",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[71].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 72,
+                   NameImage = "imgJSI72",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[72].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 73,
+                   NameImage = "imgJSI73",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[73].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 74,
+                   NameImage = "imgJSI74",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[74].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 75,
+                   NameImage = "imgJSI75",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[75].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 76,
+                   NameImage = "imgJSI76",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[76].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 77,
+                   NameImage = "imgJSI77",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[77].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 78,
+                   NameImage = "imgJSI78",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[78].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 79,
+                   NameImage = "imgJSI79",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[79].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 80,
+                   NameImage = "imgJSI80",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[80].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 81,
+                   NameImage = "imgJSI81",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[81].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 82,
+                   NameImage = "imgJSI82",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[82].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 83,
+                   NameImage = "imgJSI83",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[83].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 84,
+                   NameImage = "imgJSI84",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[84].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 85,
+                   NameImage = "imgJSI85",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[85].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 86,
+                   NameImage = "imgJSI86",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[86].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 87,
+                   NameImage = "imgJSI87",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[87].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 88,
+                   NameImage = "imgJSI88",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[88].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 89,
+                   NameImage = "imgJSI89",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[89].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 90,
+                   NameImage = "imgJSI90",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[90].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 91,
+                   NameImage = "imgC#I1",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[91].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 92,
+                   NameImage = "imgC#I2",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[92].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 93,
+                   NameImage = "imgC#I3",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[93].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 94,
+                   NameImage = "imgC#I4",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[94].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 95,
+                   NameImage = "imgC#I5",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[95].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 96,
+                   NameImage = "imgC#I6",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[96].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 97,
+                   NameImage = "imgC#I7",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[97].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 98,
+                   NameImage = "imgC#I8",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[98].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 99,
+                   NameImage = "imgC#I9",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[99].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 100,
+                   NameImage = "imgC#I10",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[100].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 101,
+                   NameImage = "imgC#I11",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[101].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 102,
+                   NameImage = "imgC#I12",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[102].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 103,
+                   NameImage = "imgC#I13",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[103].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 104,
+                   NameImage = "imgC#I14",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[104].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 105,
+                   NameImage = "imgC#I15",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[105].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 106,
+                   NameImage = "imgC#I16",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[106].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 107,
+                   NameImage = "imgC#I17",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[107].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 108,
+                   NameImage = "imgC#I18",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[108].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 109,
+                   NameImage = "imgC#I19",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[109].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 110,
+                   NameImage = "imgC#I20",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[110].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 111,
+                   NameImage = "imgC#I21",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[111].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 112,
+                   NameImage = "imgC#I22",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[112].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 113,
+                   NameImage = "imgC#I23",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[113].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 114,
+                   NameImage = "imgC#I24",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[114].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 115,
+                   NameImage = "imgC#I25",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[115].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 116,
+                   NameImage = "imgC#I26",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[116].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 117,
+                   NameImage = "imgC#I27",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[117].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 118,
+                   NameImage = "imgC#I28",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[118].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 119,
+                   NameImage = "imgC#I29",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[119].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 120,
+                   NameImage = "imgC#I30",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[120].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 121,
+                   NameImage = "imgC#I31",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[121].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 122,
+                   NameImage = "imgC#I32",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[122].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 123,
+                   NameImage = "imgC#I33",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[123].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 124,
+                   NameImage = "imgC#I34",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[124].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 125,
+                   NameImage = "imgC#I35",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[125].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 126,
+                   NameImage = "imgC#I36",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[126].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 127,
+                   NameImage = "imgC#I37",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[127].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 128,
+                   NameImage = "imgC#I38",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[128].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 129,
+                   NameImage = "imgC#I39",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[129].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 130,
+                   NameImage = "imgC#I40",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[130].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 131,
+                   NameImage = "imgC#I41",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[131].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 132,
+                   NameImage = "imgC#I42",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[132].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 133,
+                   NameImage = "imgC#I43",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[133].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 134,
+                   NameImage = "imgC#I44",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[134].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 135,
+                   NameImage = "imgC#I45",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[135].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 136,
+                   NameImage = "imgC#I46",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[136].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 137,
+                   NameImage = "imgC#I47",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[137].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 138,
+                   NameImage = "imgC#I48",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[138].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 139,
+                   NameImage = "imgC#I49",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[139].Name,
+               },
+               new ImagesClassTable
+               {
+                   IdImageClass = 140,
+                   NameImage = "imgC#I50",
+                   ImageUrl = "",
+                   RefImage = Guid.NewGuid().ToString().ToUpper(),
+                   ImageBase64 = MyDataImagesClass.MyImages[140].Name,
+               },
             };
                 db.ImagesClassTables.AddRange(newImageClass);
                 db.SaveChanges();
@@ -1268,7 +1270,7 @@ namespace ProgrammingCode.Helpers
                 };
                 db.ImagesCoursesTables.AddRange(newImageCourse);
                 db.SaveChanges();
-            }     
+            }
         }
 
         public static void AddCourse()
@@ -1299,7 +1301,7 @@ namespace ProgrammingCode.Helpers
                 };
                 db.CourseTables.AddRange(newCourse);
                 db.SaveChanges();
-            }           
+            }
         }
 
         public static void AddMyClass()
@@ -1315,7 +1317,7 @@ namespace ProgrammingCode.Helpers
                 {
                     new MyClassTable
                     {
-                        IdClass = 1,    
+                        IdClass = 1,
                         IdCourse = 1,
                         IdType = 1,
                         IdImageClass = 1,

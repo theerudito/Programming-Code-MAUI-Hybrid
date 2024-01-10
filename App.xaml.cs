@@ -13,8 +13,8 @@ namespace ProgrammingCode
             InitialValuesTest.Menu();
             InitialValuesTest.AddUser();
             InitialValuesTest.AddType();
-            InitialValuesTest.AddImagesClass();
             InitialValuesTest.AddImagesCourse();
+            InitialValuesTest.AddImagesClass();
             InitialValuesTest.AddCourse();
             InitialValuesTest.AddMyClass();
 
@@ -25,8 +25,8 @@ namespace ProgrammingCode
             //InitialValues.AddRole();
             //InitialValues.Menu();
             //InitialValues.AddType();
-            //InitialValues.AddImagesClass();
             //InitialValues.AddImagesCourse();
+            //InitialValues.AddImagesClass();ck
             //InitialValues.AddCourse();
             //InitialValues.AddMyClass();
 
