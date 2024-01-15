@@ -2,7 +2,7 @@
 {
 	public class ConnectionDB
 	{
-		private static string nameDataBase = "Prokgramsad.db";
+		private static string nameDataBase = "n18.db";
 
 		public static string GetConnection()
 		{

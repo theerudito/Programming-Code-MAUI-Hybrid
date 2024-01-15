@@ -1,5 +1,3 @@
-
-
 namespace ProgrammingCode.Helpers.MyData
 {
     public class MyDataImagesClass
@@ -35,7 +33,7 @@ namespace ProgrammingCode.Helpers.MyData
             new MyInfo { Id = 27, Name = "" },
             new MyInfo { Id = 28, Name = "" },
             new MyInfo { Id = 29, Name = "" },
-            new MyInfo { Id = 3,  Name = "" },
+            new MyInfo { Id = 30, Name = "" },
             new MyInfo { Id = 31, Name = "" },
             new MyInfo { Id = 32, Name = "" },
             new MyInfo { Id = 33, Name = "" },
@@ -96,6 +94,7 @@ namespace ProgrammingCode.Helpers.MyData
             new MyInfo { Id = 88, Name = "" },
             new MyInfo { Id = 89, Name = "" },
             new MyInfo { Id = 90, Name = "" },
+             
             new MyInfo { Id = 91, Name = "" },
             new MyInfo { Id = 92, Name = "" },
             new MyInfo { Id = 93, Name = "" },
@@ -106,9 +105,6 @@ namespace ProgrammingCode.Helpers.MyData
             new MyInfo { Id = 98, Name = "" },
             new MyInfo { Id = 99, Name = "" },
             new MyInfo { Id = 100, Name = "" },
-
-            // C# I
-
             new MyInfo { Id = 101, Name = "" },
             new MyInfo { Id = 102, Name = "" },
             new MyInfo { Id = 103, Name = "" },
@@ -149,7 +145,6 @@ namespace ProgrammingCode.Helpers.MyData
             new MyInfo { Id = 138, Name = "" },
             new MyInfo { Id = 139, Name = "" },
             new MyInfo { Id = 140, Name = "" },
-
         };
         
     }
