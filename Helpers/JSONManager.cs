@@ -24,7 +24,7 @@ namespace ProgrammingCode.Helpers
                 var readJSON = File.ReadAllText(localAppDataPath);
 
                 // Deserializar el JSON y retornar el resultado
-                return JsonConvert.DeserializeObject<List<List<Dictionary<string, string>>>>(data)!;
+                return JsonConvert.DeserializeObject<List<List<Dictionary<string, string>>>>(readJSON)!;
             }
             else
             {
