@@ -2,14 +2,12 @@
 using ProgrammingCode.Helpers.MyData;
 using ProgrammingCode.Models.Entity;
 
-
-
 namespace ProgrammingCode.Helpers
 {
     public class InitialValuesTest
     {
 
-        public static void AddRole()
+        public async static void AddRole()
         {
             var db = new ApplicationContextDB();
 
@@ -24,11 +22,11 @@ namespace ProgrammingCode.Helpers
                     };
 
                 db.RoleTables.AddRange(newRoles);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
         }
 
-        public static void AddUser()
+        public async static void AddUser()
         {
             var db = new ApplicationContextDB();
             var query = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
@@ -46,7 +44,7 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.AuthTables.Add(user);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
 
                 var findUser = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
 
@@ -61,12 +59,12 @@ namespace ProgrammingCode.Helpers
                     };
 
                     db.AuthMenuTables.AddRange(menuAuth);
-                    db.SaveChanges();
+                  await db.SaveChangesAsync();
                 }
             }
         }
 
-        public static void AddType()
+        public async static void AddType()
         {
             var db = new ApplicationContextDB();
 
@@ -82,11 +80,11 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.TypeCourseTables.AddRange(newTypes);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
         }
 
-        public static void Menu()
+        public async static void Menu()
         {
             var db = new ApplicationContextDB();
 
@@ -103,11 +101,11 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.MenuTables.AddRange(menu);
-                db.SaveChanges();
+              await  db.SaveChangesAsync();
             }
         }
 
-        public static void AddImagesClass()
+        public async static void AddImagesClass()
         {
             var db = new ApplicationContextDB();
 
@@ -121,1127 +119,1127 @@ namespace ProgrammingCode.Helpers
                    new ImagesClassTable
                    {   IdImageClass = 1,
                        NameImage = "imgJSI1",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/1.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[0].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {   IdImageClass = 2,
                        NameImage = "imgJSI2",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/2.jpg",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[1].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {   IdImageClass = 3,
                        NameImage = "imgJSI3",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/3.jpg",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[2].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 4,
                        NameImage = "imgJSI4",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/4.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[3].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 5,
                        NameImage = "imgJSI5",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/5.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[4].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 6,
                        NameImage = "imgJSI6",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/6.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[5].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 7,
                        NameImage = "imgJSI7",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/7.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[6].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 8,
                        NameImage = "imgJSI8",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/8.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[7].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 9,
                        NameImage = "imgJSI9",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/9.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[8].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 10,
                        NameImage = "imgJSI10",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/10.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[9].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 11,
                        NameImage = "imgJSI11",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/11.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[10].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 12,
                        NameImage = "imgJSI12",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/12.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[11].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 13,
                        NameImage = "imgJSI13",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/13.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[12].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 14,
                        NameImage = "imgJSI14",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/14.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[13].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 15,
                        NameImage = "imgJSI15",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/15.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[14].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 16,
                        NameImage = "imgJSI16",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/16.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[15].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 17,
                        NameImage = "imgJSI17",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/17.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[16].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 18,
                        NameImage = "imgJSI18",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/18.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[17].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 19,
                        NameImage = "imgJSI19",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/19.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[18].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 20,
                        NameImage = "imgJSI20",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/20.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[19].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 21,
                        NameImage = "imgJSI21",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/21.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[20].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 22,
                        NameImage = "imgJSI22",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/22.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[21].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 23,
                        NameImage = "imgJSI23",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/23.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[22].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 24,
                        NameImage = "imgJSI24",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/24.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[23].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 25,
                        NameImage = "imgJSI25",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/25.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[24].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 26,
                        NameImage = "imgJSI26",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/26.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[25].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 27,
                        NameImage = "imgJSI27",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/27.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[26].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 28,
                        NameImage = "imgJSI28",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/28.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[27].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 29,
                        NameImage = "imgJSI29",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/29.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[28].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 30,
                        NameImage = "imgJSI30",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/30.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[29].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 31,
                        NameImage = "imgJSI31",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/31.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[30].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 32,
                        NameImage = "imgJSI32",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/32.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[31].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 33,
                        NameImage = "imgJSI33",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/33.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[32].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 34,
                        NameImage = "imgJSI34",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/34.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[33].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 35,
                        NameImage = "imgJSI35",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/35.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[34].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 36,
                        NameImage = "imgJSI36",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/36.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[35].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 37,
                        NameImage = "imgJSI37",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/37.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[36].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 38,
                        NameImage = "imgJSI38",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/38.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[37].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 39,
                        NameImage = "imgJSI39",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/39.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[38].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 40,
                        NameImage = "imgJSI40",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/40.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[39].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 41,
                        NameImage = "imgJSI41",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/41.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[40].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 42,
                        NameImage = "imgJSI42",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/42.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[41].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 43,
                        NameImage = "imgJSI43",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/43.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[42].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 44,
                        NameImage = "imgJSI44",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/44.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[43].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 45,
                        NameImage = "imgJSI45",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/45.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[44].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 46,
                        NameImage = "imgJSI46",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/46.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[45].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 47,
                        NameImage = "imgJSI47",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/47.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[46].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 48,
                        NameImage = "imgJSI48",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/48.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[47].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 49,
                        NameImage = "imgJSI49",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/49.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[48].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 50,
                        NameImage = "imgJSI50",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/50.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[49].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 51,
                        NameImage = "imgJSI51",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/51.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[50].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 52,
                        NameImage = "imgJSI52",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/52.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[51].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 53,
                        NameImage = "imgJSI53",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/53.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[52].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 54,
                        NameImage = "imgJSI54",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/54.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[53].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 55,
                        NameImage = "imgJSI55",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/55.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[54].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 56,
                        NameImage = "imgJSI56",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/56.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[55].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 57,
                        NameImage = "imgJSI57",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/57.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[56].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 58,
                        NameImage = "imgJSI58",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/58.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[57].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 59,
                        NameImage = "imgJSI59",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/59.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[58].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 60,
                        NameImage = "imgJSI60",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/60.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[59].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 61,
                        NameImage = "imgJSI61",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/61.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[60].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 62,
                        NameImage = "imgJSI62",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/62.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[61].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 63,
                        NameImage = "imgJSI63",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/63.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[62].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 64,
                        NameImage = "imgJSI64",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/64.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[63].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 65,
                        NameImage = "imgJSI65",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/65.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[64].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 66,
                        NameImage = "imgJSI66",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/66.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[65].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 67,
                        NameImage = "imgJSI67",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/67.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[66].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 68,
                        NameImage = "imgJSI68",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/68.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[67].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 69,
                        NameImage = "imgJSI69",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/69.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[68].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 70,
                        NameImage = "imgJSI70",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/70.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[69].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 71,
                        NameImage = "imgJSI71",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/71.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[70].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 72,
                        NameImage = "imgJSI72",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/72.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[71].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 73,
                        NameImage = "imgJSI73",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/73.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[72].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 74,
                        NameImage = "imgJSI74",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/74.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[73].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 75,
                        NameImage = "imgJSI75",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/75.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[74].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 76,
                        NameImage = "imgJSI76",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/76.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[75].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 77,
                        NameImage = "imgJSI77",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/77.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[76].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 78,
                        NameImage = "imgJSI78",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/78.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[77].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 79,
                        NameImage = "imgJSI79",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/79.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[78].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 80,
                        NameImage = "imgJSI80",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/80.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[79].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 81,
                        NameImage = "imgJSI81",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/81.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[80].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 82,
                        NameImage = "imgJSI82",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/82.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[81].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 83,
                        NameImage = "imgJSI83",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/83.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[82].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 84,
                        NameImage = "imgJSI84",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/84.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[83].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 85,
                        NameImage = "imgJSI85",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/85.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[84].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 86,
                        NameImage = "imgJSI86",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/86.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[85].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 87,
                        NameImage = "imgJSI87",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/87.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[86].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 88,
                        NameImage = "imgJSI88",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/88.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[87].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 89,
                        NameImage = "imgJSI89",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/89.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[88].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 90,
                        NameImage = "imgJSI90",
-                       ImageUrl = "",
+                       ImageUrl = "./assets/imgJS/basic/90.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[89].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 91,
-                       NameImage = "imgC#I91",
-                       ImageUrl = "",
+                       NameImage = "imgC#I1",
+                       ImageUrl = "./assets/imgCSharp/basic/1.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[90].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 92,
-                       NameImage = "imgC#I92",
-                       ImageUrl = "",
+                       NameImage = "imgC#I2",
+                       ImageUrl = "./assets/imgCSharp/basic/2.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[91].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 93,
-                       NameImage = "imgC#I93",
-                       ImageUrl = "",
+                       NameImage = "imgC#I3",
+                       ImageUrl = "./assets/imgCSharp/basic/3.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[92].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 94,
-                       NameImage = "imgC#I94",
-                       ImageUrl = "",
+                       NameImage = "imgC#I4",
+                       ImageUrl = "./assets/imgCSharp/basic/4.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[93].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 95,
-                       NameImage = "imgC#I95",
-                       ImageUrl = "",
+                       NameImage = "imgC#I5",
+                       ImageUrl = "./assets/imgCSharp/basic/5.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[94].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 96,
-                       NameImage = "imgC#I96",
-                       ImageUrl = "",
+                       NameImage = "imgC#I6",
+                       ImageUrl = "./assets/imgCSharp/basic/6.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[95].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 97,
-                       NameImage = "imgC#I97",
-                       ImageUrl = "",
+                       NameImage = "imgC#I7",
+                       ImageUrl = "./assets/imgCSharp/basic/7.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[96].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 98,
-                       NameImage = "imgC#I98",
-                       ImageUrl = "",
+                       NameImage = "imgC#I8",
+                       ImageUrl = "./assets/imgCSharp/basic/8.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[97].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 99,
-                       NameImage = "imgC#I99",
-                       ImageUrl = "",
+                       NameImage = "imgC#I9",
+                       ImageUrl = "./assets/imgCSharp/basic/9.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[98].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 100,
-                       NameImage = "imgC#I100",
-                       ImageUrl = "",
+                       NameImage = "imgC#I10",
+                       ImageUrl = "./assets/imgCSharp/basic/10.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[99].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 101,
-                       NameImage = "imgC#I101",
-                       ImageUrl = "",
+                       NameImage = "imgC#I11",
+                       ImageUrl = "./assets/imgCSharp/basic/11.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[100].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 102,
-                       NameImage = "imgC#I102",
-                       ImageUrl = "",
+                       NameImage = "imgC#I12",
+                       ImageUrl = "./assets/imgCSharp/basic/12.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[101].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 103,
-                       NameImage = "imgC#I103",
-                       ImageUrl = "",
+                       NameImage = "imgC#I13",
+                       ImageUrl = "./assets/imgCSharp/basic/13.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[102].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 104,
-                       NameImage = "imgC#I104",
-                       ImageUrl = "",
+                       NameImage = "imgC#I14",
+                       ImageUrl = "./assets/imgCSharp/basic/14.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[103].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 105,
-                       NameImage = "imgC#I105",
-                       ImageUrl = "",
+                       NameImage = "imgC#I15",
+                       ImageUrl = "./assets/imgCSharp/basic/15.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[104].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 106,
-                       NameImage = "imgC#I106",
-                       ImageUrl = "",
+                       NameImage = "imgC#I16",
+                       ImageUrl = "./assets/imgCSharp/basic/16.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[105].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 107,
-                       NameImage = "imgC#I107",
-                       ImageUrl = "",
+                       NameImage = "imgC#I17",
+                       ImageUrl = "./assets/imgCSharp/basic/17.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[106].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 108,
-                       NameImage = "imgC#I108",
-                       ImageUrl = "",
+                       NameImage = "imgC#I18",
+                       ImageUrl = "./assets/imgCSharp/basic/18.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[107].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 109,
-                       NameImage = "imgC#I109",
-                       ImageUrl = "",
+                       NameImage = "imgC#I19",
+                       ImageUrl = "./assets/imgCSharp/basic/19.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[108].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 110,
-                       NameImage = "imgC#I110",
-                       ImageUrl = "",
+                       NameImage = "imgC#I20",
+                       ImageUrl = "./assets/imgCSharp/basic/20.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[109].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 111,
-                       NameImage = "imgC#I111",
-                       ImageUrl = "",
+                       NameImage = "imgC#I21",
+                       ImageUrl = "./assets/imgCSharp/basic/21.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[110].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 112,
-                       NameImage = "imgC#I122",
-                       ImageUrl = "",
+                       NameImage = "imgC#I22",
+                       ImageUrl = "./assets/imgCSharp/basic/22.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[111].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 113,
-                       NameImage = "imgC#I113",
-                       ImageUrl = "",
+                       NameImage = "imgC#I23",
+                       ImageUrl = "./assets/imgCSharp/basic/23.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[112].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 114,
-                       NameImage = "imgC#I114",
-                       ImageUrl = "",
+                       NameImage = "imgC#I24",
+                       ImageUrl = "./assets/imgCSharp/basic/24.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[113].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 115,
-                       NameImage = "imgC#I115",
-                       ImageUrl = "",
+                       NameImage = "imgC#I25",
+                       ImageUrl = "./assets/imgCSharp/basic/25.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[114].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 116,
-                       NameImage = "imgC#I116",
-                       ImageUrl = "",
+                       NameImage = "imgC#I26",
+                       ImageUrl = "./assets/imgCSharp/basic/26.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[115].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 117,
-                       NameImage = "imgC#I117",
-                       ImageUrl = "",
+                       NameImage = "imgC#I27",
+                       ImageUrl = "./assets/imgCSharp/basic/27.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[116].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 118,
-                       NameImage = "imgC#I118",
-                       ImageUrl = "",
+                       NameImage = "imgC#I28",
+                       ImageUrl = "./assets/imgCSharp/basic/28.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[117].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 119,
-                       NameImage = "imgC#I119",
-                       ImageUrl = "",
+                       NameImage = "imgC#I29",
+                       ImageUrl = "./assets/imgCSharp/basic/29.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[118].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 120,
-                       NameImage = "imgC#I120",
-                       ImageUrl = "",
+                       NameImage = "imgC#I30",
+                       ImageUrl = "./assets/imgCSharp/basic/30.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[119].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 121,
-                       NameImage = "imgC#I121",
-                       ImageUrl = "",
+                       NameImage = "imgC#I31",
+                       ImageUrl = "./assets/imgCSharp/basic/31.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[120].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 122,
-                       NameImage = "imgC#I122",
-                       ImageUrl = "",
+                       NameImage = "imgC#I32",
+                       ImageUrl = "./assets/imgCSharp/basic/32.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[121].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 123,
-                       NameImage = "imgC#I123",
-                       ImageUrl = "",
+                       NameImage = "imgC#I33",
+                       ImageUrl = "./assets/imgCSharp/basic/33.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[122].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 124,
-                       NameImage = "imgC#I124",
-                       ImageUrl = "",
+                       NameImage = "imgC#I34",
+                       ImageUrl = "./assets/imgCSharp/basic/34.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[123].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 125,
-                       NameImage = "imgC#I125",
-                       ImageUrl = "",
+                       NameImage = "imgC#I35",
+                       ImageUrl = "./assets/imgCSharp/basic/35.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[124].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 126,
-                       NameImage = "imgC#I126",
-                       ImageUrl = "",
+                       NameImage = "imgC#I36",
+                       ImageUrl = "./assets/imgCSharp/basic/36.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[125].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 127,
-                       NameImage = "imgC#I127",
-                       ImageUrl = "",
+                       NameImage = "imgC#I37",
+                       ImageUrl = "./assets/imgCSharp/basic/37.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[126].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 128,
-                       NameImage = "imgC#I128",
-                       ImageUrl = "",
+                       NameImage = "imgC#I38",
+                       ImageUrl = "./assets/imgCSharp/basic/38.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[127].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 129,
-                       NameImage = "imgC#I129",
-                       ImageUrl = "",
+                       NameImage = "imgC#I39",
+                       ImageUrl = "./assets/imgCSharp/basic/39.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[128].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 130,
-                       NameImage = "imgC#I130",
-                       ImageUrl = "",
+                       NameImage = "imgC#I40",
+                       ImageUrl = "./assets/imgCSharp/basic/40.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[129].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 131,
-                       NameImage = "imgC#I131",
-                       ImageUrl = "",
+                       NameImage = "imgC#I41",
+                       ImageUrl = "./assets/imgCSharp/basic/41.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[130].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 132,
-                       NameImage = "imgC#I132",
-                       ImageUrl = "",
+                       NameImage = "imgC#I42",
+                       ImageUrl = "./assets/imgCSharp/basic/42.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[131].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 133,
-                       NameImage = "imgC#I133",
-                       ImageUrl = "",
+                       NameImage = "imgC#I43",
+                       ImageUrl = "./assets/imgCSharp/basic/43.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[132].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 134,
-                       NameImage = "imgC#I134",
-                       ImageUrl = "",
+                       NameImage = "imgC#I44",
+                       ImageUrl = "./assets/imgCSharp/basic/44.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[133].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 135,
-                       NameImage = "imgC#I135",
-                       ImageUrl = "",
+                       NameImage = "imgC#I45",
+                       ImageUrl = "./assets/imgCSharp/basic/45.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[134].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 136,
-                       NameImage = "imgC#I136",
-                       ImageUrl = "",
+                       NameImage = "imgC#I46",
+                       ImageUrl = "./assets/imgCSharp/basic/46.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[135].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 137,
-                       NameImage = "imgC#I137",
-                       ImageUrl = "",
+                       NameImage = "imgC#I47",
+                       ImageUrl = "./assets/imgCSharp/basic/47.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[136].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 138,
-                       NameImage = "imgC#I138",
-                       ImageUrl = "",
+                       NameImage = "imgC#I48",
+                       ImageUrl = "./assets/imgCSharp/basic/48.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[137].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 139,
-                       NameImage = "imgC#I139",
-                       ImageUrl = "",
+                       NameImage = "imgC#I49",
+                       ImageUrl = "./assets/imgCSharp/basic/49.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[138].Name
+                       ImageBase64 = ""
                    },
                    new ImagesClassTable
                    {
                        IdImageClass = 140,
-                       NameImage = "imgC#I140",
-                       ImageUrl = "",
+                       NameImage = "imgC#I50",
+                       ImageUrl = "./assets/imgCSharp/basic/50.png",
                        RefImage = "",
-                       ImageBase64 = MyDataImagesClass.MyImages[139].Name
+                       ImageBase64 = ""
                    },
                 };
                 db.ImagesClassTables.AddRange(newImageClass);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
         }
 
-        public static void AddImagesCourse()
+        public async static void AddImagesCourse()
         {
             var db = new ApplicationContextDB();
 
@@ -1268,11 +1266,11 @@ namespace ProgrammingCode.Helpers
                     },
                 };
                 db.ImagesCoursesTables.AddRange(newImageCourse);
-                db.SaveChanges();
+              await db.SaveChangesAsync();
             }
         }
 
-        public static void AddCourse()
+        public async static void AddCourse()
         {
             var db = new ApplicationContextDB();
 
@@ -1299,11 +1297,11 @@ namespace ProgrammingCode.Helpers
                     },
                 };
                 db.CourseTables.AddRange(newCourse);
-                db.SaveChanges();
+              await  db.SaveChangesAsync();
             }
         }
 
-        public static void AddMyClass()
+        public async static void AddMyClass()
         {
             var db = new ApplicationContextDB();
 
@@ -3005,7 +3003,7 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.MyClassTables.AddRange(newMyClass);
-                db.SaveChanges();
+               await db.SaveChangesAsync();
             }
         }
     }

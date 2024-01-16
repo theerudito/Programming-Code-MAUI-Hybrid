@@ -6,6 +6,8 @@ namespace ProgrammingCode.Helpers
 	{
         public static List<List<Dictionary<string, string>>> ReadJSON()
         {
+
+
             string nameFile = "data.json";
             string wwwrootPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "wwwroot", "json");
             string pathJSON = Path.Combine(wwwrootPath, nameFile);
@@ -19,18 +21,16 @@ namespace ProgrammingCode.Helpers
                 File.Copy(pathJSON, localAppDataPath, true);
 
                 // Leer el archivo desde el directorio de datos locales
-               var readJSON = File.ReadAllText(localAppDataPath);
+                var readJSON = File.ReadAllText(localAppDataPath);
 
                 // Deserializar el JSON y retornar el resultado
-                return JsonConvert.DeserializeObject<List<List<Dictionary<string, string>>>>(readJSON)!;
+                return JsonConvert.DeserializeObject<List<List<Dictionary<string, string>>>>(data)!;
             }
             else
             {
-               // Si el archivo no existe, retornar una lista vacía
-                //return new List<List<Dictionary<string, string>>>();
+                // Si el archivo no existe, retornar una lista vacía
+                return new List<List<Dictionary<string, string>>>();
             }
-
-            return new List<List<Dictionary<string, string>>>();
         }
     }
 }

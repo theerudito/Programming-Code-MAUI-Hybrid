@@ -19,14 +19,11 @@ namespace ProgrammingCode
             InitialValuesTest.AddMyClass();
 
 
-
-
-
             //InitialValues.AddRole();
             //InitialValues.Menu();
             //InitialValues.AddType();
             //InitialValues.AddImagesCourse();
-            //InitialValues.AddImagesClass();ck
+            //InitialValues.AddImagesClass();
             //InitialValues.AddCourse();
             //InitialValues.AddMyClass();
 
