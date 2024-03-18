@@ -6,8 +6,7 @@ namespace ProgrammingCode.Helpers
 {
     public class InitialValuesTest
     {
-
-        public async static void AddRole()
+        public static async void AddRole()
         {
             var db = new ApplicationContextDB();
 
@@ -22,11 +21,11 @@ namespace ProgrammingCode.Helpers
                     };
 
                 db.RoleTables.AddRange(newRoles);
-               await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void AddUser()
+        public static async void AddUser()
         {
             var db = new ApplicationContextDB();
             var query = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
@@ -44,7 +43,7 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.AuthTables.Add(user);
-               await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
 
                 var findUser = db.AuthTables.Where(u => u.IdUser == 1).FirstOrDefault();
 
@@ -54,17 +53,15 @@ namespace ProgrammingCode.Helpers
                     {
                         new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 1 },
                         new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 2 },
-                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 3 },
-                        new AuthMenuTable { IdUser = findUser.IdUser, IdMenu = 4 },
                     };
 
                     db.AuthMenuTables.AddRange(menuAuth);
-                  await db.SaveChangesAsync();
+                    await db.SaveChangesAsync();
                 }
             }
         }
 
-        public async static void AddType()
+        public static async void AddType()
         {
             var db = new ApplicationContextDB();
 
@@ -80,11 +77,11 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.TypeCourseTables.AddRange(newTypes);
-               await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void Menu()
+        public static async void Menu()
         {
             var db = new ApplicationContextDB();
 
@@ -101,11 +98,11 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.MenuTables.AddRange(menu);
-              await  db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void AddImagesClass()
+        public static async void AddImagesClass()
         {
             var db = new ApplicationContextDB();
 
@@ -1235,11 +1232,11 @@ namespace ProgrammingCode.Helpers
                    },
                 };
                 db.ImagesClassTables.AddRange(newImageClass);
-               await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void AddImagesCourse()
+        public static async void AddImagesCourse()
         {
             var db = new ApplicationContextDB();
 
@@ -1266,11 +1263,11 @@ namespace ProgrammingCode.Helpers
                     },
                 };
                 db.ImagesCoursesTables.AddRange(newImageCourse);
-              await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void AddCourse()
+        public static async void AddCourse()
         {
             var db = new ApplicationContextDB();
 
@@ -1297,11 +1294,11 @@ namespace ProgrammingCode.Helpers
                     },
                 };
                 db.CourseTables.AddRange(newCourse);
-              await  db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
 
-        public async static void AddMyClass()
+        public static async void AddMyClass()
         {
             var db = new ApplicationContextDB();
 
@@ -1794,7 +1791,6 @@ namespace ProgrammingCode.Helpers
                         LinkRef = "",
                     },
 
-
                       new MyClassTable
                     {
                         IdClass = 41,
@@ -2036,7 +2032,6 @@ namespace ProgrammingCode.Helpers
                         LinkRef = "",
                     },
 
-
                       new MyClassTable
                     {
                         IdClass = 61,
@@ -2277,7 +2272,6 @@ namespace ProgrammingCode.Helpers
                         CodeClass = "",
                         LinkRef = "",
                     },
-
 
                       new MyClassTable
                     {
@@ -3003,7 +2997,7 @@ namespace ProgrammingCode.Helpers
                 };
 
                 db.MyClassTables.AddRange(newMyClass);
-               await db.SaveChangesAsync();
+                await db.SaveChangesAsync();
             }
         }
     }
