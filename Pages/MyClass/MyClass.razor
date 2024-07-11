@@ -17,7 +17,7 @@
                                     @onclick="() => OpenMyClass(item.IdClass)"></i>
                         </div>
 
-                <div id="containerInformacion" class='@((IdClass == item.IdClass)? "d-bloc" : "d-none")'>
+                <div id="containerInformacion" class='@((IdClass == item.IdClass) ? "d-block" : "d-none")'>
                             <h6>@item.TitleTwo</h6>
                             <p>@item.InfoClass</p>
                             <div class="containerImageMyClass">

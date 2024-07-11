@@ -33,7 +33,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
-      <AndroidPackageFormat>aab</AndroidPackageFormat>
+      <AndroidPackageFormat>apk</AndroidPackageFormat>
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     </PropertyGroup>
@@ -41,7 +41,7 @@
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-      <AndroidPackageFormat>aab</AndroidPackageFormat>
+      <AndroidPackageFormat>apk</AndroidPackageFormat>
     </PropertyGroup>
 
     
@@ -210,11 +210,6 @@
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\90.png" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<None Remove="wwwroot\json\data.json" />
-		<None Include="wwwroot\json\data.json" CopyToOutputDirectory="PreserveNewest" />
-	</ItemGroup>
-
     
 
     <ItemGroup>
@@ -231,7 +226,6 @@
         <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-        <PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.3" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 

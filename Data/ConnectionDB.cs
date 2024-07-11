@@ -2,7 +2,7 @@
 {
     public class ConnectionDB
     {
-        private static string nameDataBase = "Programming-Code.db";
+        private static string nameDataBase = "Programming-Code1.db";
 
         public static string GetConnection()
         {

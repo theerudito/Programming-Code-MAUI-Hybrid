@@ -1,39 +1,36 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProgrammingCode.Models.Entity;
 
-
 namespace ProgrammingCode.Data
 {
-	public class ApplicationContextDB : DbContext
-	{
-		public virtual DbSet<ApplicationTable> ApplicationTables { get; set; }
+    public class ApplicationContextDB : DbContext
+    {
+        public virtual DbSet<ApplicationTable> ApplicationTables { get; set; }
 
-		public virtual DbSet<AuthMenuTable> AuthMenuTables { get; set; }
+        public virtual DbSet<AuthMenuTable> AuthMenuTables { get; set; }
 
-		public virtual DbSet<AuthTable> AuthTables { get; set; }
+        public virtual DbSet<AuthTable> AuthTables { get; set; }
 
-		public virtual DbSet<ClassTable> ClassTables { get; set; }
+        public virtual DbSet<ClassTable> ClassTables { get; set; }
 
-		public virtual DbSet<CourseTable> CourseTables { get; set; }
+        public virtual DbSet<CourseTable> CourseTables { get; set; }
 
         public virtual DbSet<ImagesClassTable> ImagesClassTables { get; set; }
 
-		public virtual DbSet<ImagesCoursesTable> ImagesCoursesTables { get; set; }
+        public virtual DbSet<ImagesCoursesTable> ImagesCoursesTables { get; set; }
 
-		public virtual DbSet<MenuTable> MenuTables { get; set; }
+        public virtual DbSet<MenuTable> MenuTables { get; set; }
 
-		public virtual DbSet<MyClassTable> MyClassTables { get; set; }
+        public virtual DbSet<MyClassTable> MyClassTables { get; set; }
 
-		public virtual DbSet<RoleTable> RoleTables { get; set; }
+        public virtual DbSet<RoleTable> RoleTables { get; set; }
 
-		public virtual DbSet<TypeCourseTable> TypeCourseTables { get; set; }
+        public virtual DbSet<TypeCourseTable> TypeCourseTables { get; set; }
 
-
-		public ApplicationContextDB()
-		{
+        public ApplicationContextDB()
+        {
             Database.EnsureCreated();
             Database.Migrate();
-			
         }
 
         public ApplicationContextDB(DbContextOptions<ApplicationContextDB> options) : base(options)
@@ -41,10 +38,10 @@ namespace ProgrammingCode.Data
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			var connection = $"Filename={ConnectionDB.GetConnection()}";
-			optionsBuilder.UseSqlite(connection);
-		}
+        {
+            var connection = $"Filename={ConnectionDB.GetConnection()}";
+            optionsBuilder.UseSqlite(connection);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,7 +50,7 @@ namespace ProgrammingCode.Data
                 entity.ToTable("RoleTable");
                 entity.HasKey(r => r.IdRole).HasName("PK_RoleTable");
                 entity.Property(r => r.Name).IsRequired();
-
+                entity.HasData(InitialValues._listRole);
 
                 entity.HasMany(r => r.AuthNavigation)
                       .WithOne(a => a.Roles)
@@ -70,7 +67,7 @@ namespace ProgrammingCode.Data
                 entity.Property(a => a.Email).IsRequired();
                 entity.Property(a => a.Password).IsRequired();
                 entity.Property(a => a.IdRole).IsRequired();
-
+                entity.HasData(InitialValues._listAuth);
 
                 entity.HasMany(a => a.AuthMenuNavigation)
                  .WithOne(a => a.Auth)
@@ -94,6 +91,7 @@ namespace ProgrammingCode.Data
                 entity.HasKey(am => am.IdAuthMenu).HasName("PK_AuthMenuTable");
                 entity.Property(am => am.IdUser).IsRequired();
                 entity.Property(am => am.IdMenu).IsRequired();
+                entity.HasData(InitialValues._listAuthMenu);
             });
 
             modelBuilder.Entity<MenuTable>(entity =>
@@ -102,7 +100,7 @@ namespace ProgrammingCode.Data
                 entity.HasKey(m => m.IdMenu).HasName("PK_MenuTable");
                 entity.Property(m => m.NameMenu).IsRequired();
                 entity.Property(m => m.NameLink).IsRequired();
-
+                entity.HasData(InitialValues._listMenu);
 
                 entity.HasMany(m => m.AuthMenuNavigation)
                       .WithOne(m => m.Menu)
@@ -127,13 +125,12 @@ namespace ProgrammingCode.Data
                 entity.Property(ic => ic.ImageUrl);
                 entity.Property(ic => ic.RefImage);
                 entity.Property(ic => ic.ImageBase64);
-
+                entity.HasData(InitialValues._listImagesClass);
 
                 entity.HasMany(ic => ic.MyClassTableNavigation)
                       .WithOne(ic => ic.ImageClass)
                       .HasForeignKey(ic => ic.IdImageClass)
                       .HasConstraintName("imagemyclass_fk");
-
             });
 
             modelBuilder.Entity<MyClassTable>(entity =>
@@ -148,6 +145,7 @@ namespace ProgrammingCode.Data
                 entity.Property(mc => mc.IdType).IsRequired();
                 entity.Property(mc => mc.IdCourse).IsRequired();
                 entity.Property(mc => mc.IdImageClass).IsRequired();
+                entity.HasData(InitialValues._listMyClass);
 
                 entity.HasMany(mc => mc.ClassNavigation)
                       .WithOne(mc => mc.MyClass)
@@ -163,13 +161,12 @@ namespace ProgrammingCode.Data
                 entity.Property(ic => ic.ImageUrl);
                 entity.Property(ic => ic.RefImage);
                 entity.Property(ic => ic.ImageBase64);
-
+                entity.HasData(InitialValues._listImagesCourse);
 
                 entity.HasMany(ic => ic.CoursesNavigation)
                       .WithOne(ic => ic.ImageCourse)
                       .HasForeignKey(a => a.IdImageCourse)
                       .HasConstraintName("imagecourse_fk");
-
             });
 
             modelBuilder.Entity<CourseTable>(entity =>
@@ -179,9 +176,7 @@ namespace ProgrammingCode.Data
                 entity.Property(c => c.Name).IsRequired();
                 entity.Property(c => c.IdType).IsRequired();
                 entity.Property(c => c.IdImageCourse).IsRequired();
-                entity.Property(c => c.SelectedCourse).HasDefaultValue(false);
-
-
+                entity.HasData(InitialValues._listCourses);
 
                 entity.HasMany(c => c.ApplicationNavigation)
                       .WithOne(c => c.Courses)
@@ -204,6 +199,7 @@ namespace ProgrammingCode.Data
                 entity.ToTable("TypeCourseTable");
                 entity.HasKey(t => t.IdType).HasName("PK_TypeCourseTable");
                 entity.Property(t => t.Name).IsRequired();
+                entity.HasData(InitialValues._listTypeCourse);
 
                 entity.HasMany(t => t.CourseNavigation)
                       .WithOne(t => t.TypeCourses)
@@ -230,12 +226,9 @@ namespace ProgrammingCode.Data
                 entity.Property(a => a.IdType).IsRequired();
                 entity.Property(a => a.IdUser).IsRequired();
                 entity.Property(a => a.LikeCourse).HasDefaultValue(false);
-
-               
             });
 
             base.OnModelCreating(modelBuilder);
-        
         }
     }
 }

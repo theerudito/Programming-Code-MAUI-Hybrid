@@ -8,27 +8,27 @@ namespace ProgrammingCode.Service.Repository
 {
 	public class CourseRepository(ApplicationContextDB db) : ICourse
 	{
-		
+
 		public async Task<List<CourseDto>> GetsCourses()
 		{
 			try
 			{
 				var query = await (from course in db.CourseTables
-								   join type in db.TypeCourseTables on course.IdType equals type.IdType
-								   join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse       
-                                   select new CourseDto
-								   {
-									   IdCourse = course.IdCourse,
-									   IdType = course.IdType,
-									   IdImageCourse = course.IdImageCourse,
-									   Name = course.Name,
-									   TypeName = type.Name,
-									   SelectedCourse  = course.SelectedCourse,
-                                       ImageUrl = image.ImageUrl!,
-									   RefImage	= image.RefImage!,
-									   NameImage = image.NameImage!,
-									   ImageBase64 = image.ImageBase64!						
-								   }).ToListAsync();
+													 join type in db.TypeCourseTables on course.IdType equals type.IdType
+													 join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse
+													 select new CourseDto
+													 {
+														 IdCourse = course.IdCourse,
+														 IdType = course.IdType,
+														 IdImageCourse = course.IdImageCourse,
+														 Name = course.Name,
+														 TypeName = type.Name,
+														 SelectedCourse = course.SelectedCourse,
+														 ImageUrl = image.ImageUrl!,
+														 RefImage = image.RefImage!,
+														 NameImage = image.NameImage!,
+														 ImageBase64 = image.ImageBase64!
+													 }).ToListAsync();
 				return query;
 
 			}
@@ -44,22 +44,22 @@ namespace ProgrammingCode.Service.Repository
 			try
 			{
 				var query = await (from course in db.CourseTables
-								   join type in db.TypeCourseTables on course.IdType equals type.IdType
-								   join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse
-                                   where course.IdCourse == idCourseDto
-								   select new CourseDto
-								   {
-									   IdCourse = course.IdCourse,
-									   IdType = course.IdType,
-									   IdImageCourse = course.IdImageCourse,
-									   Name = course.Name,
-									   TypeName = type.Name,
-                                       SelectedCourse = course.SelectedCourse,
-                                       ImageUrl = image.ImageUrl!,
-									   RefImage = image.RefImage!,
-									   NameImage = image.NameImage!,
-									   ImageBase64 = image.ImageBase64!
-								   }).FirstOrDefaultAsync();
+													 join type in db.TypeCourseTables on course.IdType equals type.IdType
+													 join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse
+													 where course.IdCourse == idCourseDto
+													 select new CourseDto
+													 {
+														 IdCourse = course.IdCourse,
+														 IdType = course.IdType,
+														 IdImageCourse = course.IdImageCourse,
+														 Name = course.Name,
+														 TypeName = type.Name,
+														 SelectedCourse = course.SelectedCourse,
+														 ImageUrl = image.ImageUrl!,
+														 RefImage = image.RefImage!,
+														 NameImage = image.NameImage!,
+														 ImageBase64 = image.ImageBase64!
+													 }).FirstOrDefaultAsync();
 				return query!;
 
 			}
@@ -74,7 +74,7 @@ namespace ProgrammingCode.Service.Repository
 		{
 			try
 			{
-                var mewCouse = new CourseTable
+				var mewCouse = new CourseTable
 				{
 					Name = courseDto.Name.ToUpper(),
 					IdType = courseDto.IdType,
@@ -82,7 +82,7 @@ namespace ProgrammingCode.Service.Repository
 					SelectedCourse = false
 				};
 
-                db.CourseTables.Add(mewCouse);
+				db.CourseTables.Add(mewCouse);
 				await db.SaveChangesAsync();
 
 				return true;
@@ -101,14 +101,14 @@ namespace ProgrammingCode.Service.Repository
 				var query = await db.CourseTables.FindAsync(idCourseDto);
 
 				if (query is null) return false;
-				 {
-                    query.Name = courseDto.Name.ToUpper();
-                    query.IdType = courseDto.IdType;
+				{
+					query.Name = courseDto.Name.ToUpper();
+					query.IdType = courseDto.IdType;
 					query.IdImageCourse = courseDto.IdImageCourse;
 					query.SelectedCourse = courseDto.SelectedCourse;
 					await db.SaveChangesAsync();
 					return true;
-				 }						
+				}
 			}
 			catch (Exception e)
 			{
@@ -148,7 +148,7 @@ namespace ProgrammingCode.Service.Repository
 					query.SelectedCourse = true;
 					await db.SaveChangesAsync();
 					return true;
-				}			
+				}
 			}
 			catch (Exception e)
 			{
@@ -163,22 +163,22 @@ namespace ProgrammingCode.Service.Repository
 			{
 
 				var query = await (from course in db.CourseTables
-								   join type in db.TypeCourseTables on course.IdType equals type.IdType
-								   join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse
-                                   where course.Name.Contains(searchCourseDto.ToUpper())
-								   select new CourseDto
-								   {
-									   IdCourse = course.IdCourse,
-									   IdType = course.IdType,
-									   IdImageCourse = course.IdImageCourse,
-									   Name = course.Name,
-									   TypeName = type.Name,
-                                       SelectedCourse = course.SelectedCourse,
-                                       ImageUrl = image.ImageUrl!,
-									   RefImage = image.RefImage!,
-									   NameImage = image.NameImage!,
-									   ImageBase64 = image.ImageBase64!
-								   }).ToListAsync();
+													 join type in db.TypeCourseTables on course.IdType equals type.IdType
+													 join image in db.ImagesCoursesTables on course.IdImageCourse equals image.IdImageCourse
+													 where course.Name.Contains(searchCourseDto.ToUpper())
+													 select new CourseDto
+													 {
+														 IdCourse = course.IdCourse,
+														 IdType = course.IdType,
+														 IdImageCourse = course.IdImageCourse,
+														 Name = course.Name,
+														 TypeName = type.Name,
+														 SelectedCourse = course.SelectedCourse,
+														 ImageUrl = image.ImageUrl!,
+														 RefImage = image.RefImage!,
+														 NameImage = image.NameImage!,
+														 ImageBase64 = image.ImageBase64!
+													 }).ToListAsync();
 				return query;
 			}
 			catch (Exception e)

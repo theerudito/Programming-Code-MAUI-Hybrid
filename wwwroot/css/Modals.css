@@ -1,12 +1,94 @@
+.modalContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+    .modalContainer > div {
+        width: 380px;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        user-select: none;
+        background: #292D35
+    }
+
 .modalHeader {
-    background-color: #292D35;
+    background: #512BD4;
     color: white;
+    display: flex;
+    width: auto;
+    height: 30px;
+    justify-content: space-between;
+    padding: 3px 5px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+    .modalHeader > i {
+        display: flex;
+        cursor: pointer;
+    }
+
+.containerClientModalHeader > div {
+    cursor: pointer;
 }
 
 .modalBody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 465px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.modalFooter {
-    background-color: #292D35;
-    color: white;
+    .modalBody::-webkit-scrollbar {
+        background: #292D35;
+        width: 5px;
+    }
+
+    .modalBody::-webkit-scrollbar-thumb {
+        background-color: #512BD4;
+    }
+
+.modalCard > img {
+    border-radius: 5px;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.modalCard {
+    background: #212121;
+    border-radius: 5px;
+    width: 170px;
+    height: 150px;
+    margin: 10px 10px;
+}
+
+    .modalCard > div {
+        background: #512BD4;
+        color: white;
+        display: flex;
+        width: auto;
+        height: 30px;
+        justify-content: space-between;
+        padding: 3px 5px;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+        .modalCard > div > i {
+            cursor: pointer;
+        }
