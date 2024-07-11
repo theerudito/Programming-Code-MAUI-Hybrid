@@ -206,15 +206,15 @@ namespace ProgrammingCode.Data
         {
             new CourseTable { IdCourse = 1,  Name = "JAVASCRIPT I",    IdType = 1, IdImageCourse = 1,  },
             new CourseTable { IdCourse = 2,  Name = "C# I",            IdType = 1, IdImageCourse = 2,  },
-            new CourseTable { IdCourse = 3,  Name = "GO I",            IdType = 1, IdImageCourse = 3,  },
-            new CourseTable { IdCourse = 4,  Name = "REACT JS I",      IdType = 1, IdImageCourse = 4,  },
-            new CourseTable { IdCourse = 5,  Name = "TYPESCRIPT I",    IdType = 1, IdImageCourse = 5,  },
-            new CourseTable { IdCourse = 6,  Name = "PYTHON I",        IdType = 1, IdImageCourse = 6,  },
-            new CourseTable { IdCourse = 7,  Name = "SQLITE I",        IdType = 1, IdImageCourse = 7,  },
-            new CourseTable { IdCourse = 8,  Name = "SQL SERVER I",    IdType = 1, IdImageCourse = 8,  },
-            new CourseTable { IdCourse = 9,  Name = "MY SQL I",        IdType = 1, IdImageCourse = 9,  },
-            new CourseTable { IdCourse = 10, Name = "POSTGRES I",      IdType = 1, IdImageCourse = 10, },
-            new CourseTable { IdCourse = 11, Name = "MONGO DB I",      IdType = 1, IdImageCourse = 11, },
+            //new CourseTable { IdCourse = 3,  Name = "GO I",            IdType = 1, IdImageCourse = 3,  },
+            //new CourseTable { IdCourse = 4,  Name = "REACT JS I",      IdType = 1, IdImageCourse = 4,  },
+            //new CourseTable { IdCourse = 5,  Name = "TYPESCRIPT I",    IdType = 1, IdImageCourse = 5,  },
+            //new CourseTable { IdCourse = 6,  Name = "PYTHON I",        IdType = 1, IdImageCourse = 6,  },
+            //new CourseTable { IdCourse = 7,  Name = "SQLITE I",        IdType = 1, IdImageCourse = 7,  },
+            //new CourseTable { IdCourse = 8,  Name = "SQL SERVER I",    IdType = 1, IdImageCourse = 8,  },
+            //new CourseTable { IdCourse = 9,  Name = "MY SQL I",        IdType = 1, IdImageCourse = 9,  },
+            //new CourseTable { IdCourse = 10, Name = "POSTGRES I",      IdType = 1, IdImageCourse = 10, },
+            //new CourseTable { IdCourse = 11, Name = "MONGO DB I",      IdType = 1, IdImageCourse = 11, },
         };
 
         public static List<MyClassTable> _listMyClass = new List<MyClassTable>
