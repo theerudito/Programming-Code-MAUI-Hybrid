@@ -31,7 +31,7 @@
                                  @onclick="() => LikeCourse(item.IdApplication)" alt=""/>
                 </div>
                 <div class="containerImage">
-                    <img src="@((item.ImageUrl == "") ? ImagenConverterApp.ToPng(item.ImageBase64) : item.ImageUrl)"  alt="./assets/javascript.svg" />
+                    <img src="@((item.ImageUrl == "") ? ImagenConverterApp.ToPng(item.ImageBase64!) : item.ImageUrl)"  alt="./assets/javascript.svg" />
                 </div>
                 <button @onclick="() => NavigateMyClass(item)">
                     @if (item.ScoreCourse == 100)
@@ -53,28 +53,28 @@
 
 
 
-    <div class="modalContainer" style="display: @_isVisible">
-        <div>
+    <div class="modalContainer" style="display:@_isVisible">
+        <div class="modalDialog">
             <div class="modalHeader">
                 <p>@LanguageService.SelectAnCourseLabel</p>
                 <i class="bi bi-x" @onclick="CloseModal"></i>
-           </div>
+            </div>
+
             <div class="modalBody">
                 @foreach (var item in _listCourse)
                 {
                     <div class="modalCard" @onclick="() => SelectCourse(item)">
-                        <div>
+                        <div class="modalCardHeader">
                             <p>@item.Name</p>
                             <i class='@((item.SelectedCourse == true) ? "bi bi-check-circle" : "bi-plus-circle")'></i>
                         </div>
-                        <img src="@((item.ImageUrl == "" ) ? ImagenConverterApp.ToPng(item.ImageBase64) : item.ImageUrl)" alt="./assets/code.svg">
+                        <img src="@((item.ImageUrl == "" ) ? ImagenConverterApp.ToPng(item.ImageBase64!) : item.ImageUrl)" alt="./assets/code.svg">
                     </div>
                 }
-           </div>
+            </div>
         </div>
     </div>
 
-    
 </div>
 
 

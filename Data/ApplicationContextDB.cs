@@ -40,6 +40,8 @@ namespace ProgrammingCode.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connection = $"Filename={ConnectionDB.GetConnection()}";
+
+            Console.WriteLine("Connection String: " + connection);
             optionsBuilder.UseSqlite(connection);
         }
 

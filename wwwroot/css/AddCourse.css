@@ -27,10 +27,10 @@
     width: 80px;
 }
 
-.containerOpenModal > button:hover {
-    background: #2a34eb;
-    color: white;
-}
+    .containerOpenModal > button:hover {
+        background: #2a34eb;
+        color: white;
+    }
 
 .containerAddCourseList {
     margin: auto;
@@ -51,28 +51,8 @@
     border-radius: 10px;
 }
 
-.containerCardCourse > p {
-    margin: 0px;
-}
+  
 
-.containerCardCourse > button {
-    margin: 10px auto;
-}
-
-
-.containerAddCardList {
-    background: #181A2B;
-    user-select: none;
-    box-shadow: 0px 0px 10px 0px #0d101e;
-    border-radius: 10px;
-    width: 180px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    align-items: center;
-    user-select: none;
-}
 
 .containerTitleCardList {
     background-color: #292D35;
@@ -80,12 +60,12 @@
     border-radius: 10px 10px 0px 0px
 }
 
-.containerTitleCardList > p {
-    display: flex;
-    align-items :center;
-    justify-content: center;
-    margin: auto;
-}
+    .containerTitleCardList > p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+    }
 
 .containerAddCardList > p {
     margin: 0px;
@@ -98,19 +78,13 @@
     margin: 10px;
 }
 
-.containerAddButtons > button {
-    
-}
+    .containerAddBodyModalCourses {
+        gap: 10px
+    }
 
-.containerBodyModal {
-}
-
-.containerBodyModal > select 
-{
-    margin: 10px auto;
-}
-
-.containerBodyModal > input {
-    margin: 10px auto;
-}
-
+    .containerAddBodyModalCourses input {
+        background:red;
+        margin:auto;
+        align-content: center;
+        gap: 10px
+    }

@@ -62,9 +62,16 @@ namespace ProgrammingCode.Pages.MyClass
             }
         }
 
-        private void OpenMyClass(int IdClass)
+        private void OpenMyClass(int idClass)
         {
-            this.IdClass = IdClass;
+            if (this.IdClass == idClass)
+            {
+                this.IdClass = 0;
+            }
+            else
+            {
+                this.IdClass = idClass;
+            }
         }
 
         private void openBrowser(string url)

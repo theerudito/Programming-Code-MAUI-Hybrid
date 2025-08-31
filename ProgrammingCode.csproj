@@ -33,7 +33,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
-      <AndroidPackageFormat>aab</AndroidPackageFormat>
+      <AndroidPackageFormat>apk</AndroidPackageFormat>
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
     </PropertyGroup>
@@ -41,7 +41,7 @@
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-      <AndroidPackageFormat>aab</AndroidPackageFormat>
+      <AndroidPackageFormat>apk</AndroidPackageFormat>
     </PropertyGroup>
 
     
@@ -61,6 +61,11 @@
 
 	<ItemGroup>
 		<MauiResgen Include="wwwroot\**\*" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Content Remove="wwwroot\assets\imgGo\install-go.webp" />
 	</ItemGroup>
 
 
@@ -118,6 +123,55 @@
 	  <MauiResgen Remove="wwwroot\assets\imgCSharp\basic\9.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgCSharp\basic\conditional-operator.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgCSharp\basic\const.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\array.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\bool.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\build-go.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\chanel.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\const.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\convertion.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\create-dir.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\float.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\for-break.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\for-continue.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\for1.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\for2.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\for3.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\fun-ano.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\fun-fullpar.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\func-conpar.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\func-sinpar.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\gologo.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\gorutines.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\handler-error1.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\handler-error2.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\ifelse1.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\ifelse2.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\initializargo.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\install-library.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\interface.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\main.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\map.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\method-interface.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\op-arism.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\op-asi.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\op-com.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\op-files.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\op-log.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\package.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\pointer.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\read-file.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\run-build.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\run-go.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\select.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\sintonization.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\slice.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\string.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\struct.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\switch.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\var-ex.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\var-im.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\basic\write-file.png" />
+	  <MauiResgen Remove="wwwroot\assets\imgGo\install-go.webp" />
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\1.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\10.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\11.png" />
@@ -208,6 +262,11 @@
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\89.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\9.png" />
 	  <MauiResgen Remove="wwwroot\assets\imgJS\basic\90.png" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <None Include="wwwroot\assets\imgGo\basic\install-go.webp" />
 	</ItemGroup>
 
     

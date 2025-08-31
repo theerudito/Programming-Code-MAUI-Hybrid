@@ -27,10 +27,10 @@
     width: 80px;
 }
 
-.containerOpenModalClass > button:hover {
-    background: #2a34eb;
-    color: white;
-}
+    .containerOpenModalClass > button:hover {
+        background: #2a34eb;
+        color: white;
+    }
 
 .containerAddClassList {
     margin: auto;
@@ -38,10 +38,6 @@
     grid-template-columns: auto auto;
     gap: 20px;
     width: auto;
-}
-
-.containerCardClassList {
-    
 }
 
 .containerCardClass {
@@ -56,60 +52,9 @@
     border-radius: 10px;
 }
 
-.containerCardClass > p {
-    margin: 0px;
+.containerAddBodyModalClass {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px
 }
-
-.containerCardClass > button {
-    margin: 10px;
-}
-
-
-.containerCardClassList > p {
-    margin: 0px;
-}
-
-.containerCardClassList > button  {
-     margin: 10px auto;
-}
-
-.containerTitleClassList {
-    background-color: #292D35;
-    width: 100%;
-    border-radius: 10px 10px 0px 0px
-}
-
-.containerTitleClassList > p {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin: auto;
-}
-
-
-.containerBodyModalClass > img {
-   width: 120px;
-   height: 100px;
-   margin: auto;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-
-.containerBodyModalClass > select 
-{
-    margin: 5px auto;
-}
-
-.containerBodyModalClass > input {
-   margin: 10px auto;
-
-}
-.containerImagePage > form > input {
-    margin: 10px auto;
-}
-
-
-
-

@@ -1,12 +1,14 @@
-﻿
-.containerImagePage > input {
-  margin: 10px auto;
+﻿.containerModalImages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: auto;
+    gap: 10px;
 }
 
-.containerImagePage > img {
-   width: 200px;
-   height: 200px;
-   margin: 10px auto;
-   display: flex;
+.containerModalImages img {
+    width: 100px;
+    height: 100px
 }
-

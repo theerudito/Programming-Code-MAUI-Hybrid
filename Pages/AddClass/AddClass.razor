@@ -25,14 +25,14 @@
 
 <Modal @ref="MyVariablesApp.ModalAddClassRef">
     <ModalContent Centered>
-        <ModalHeader Class="modalHeader">
+        <ModalHeader>
             <ModalTitle>@((_idClass == 0) ? "ADD CLASS" : "EDIT CLASS")</ModalTitle>
             <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddClassRef)"></i>
         </ModalHeader>
-        <ModalBody Class="modalBody">
+        <ModalBody>
             <Field>
-                <div class="containerBodyModalClass">
-                        <EditForm Model="_myClass" class="containerBodyModalClass">
+                <div class="containerAddBodyModalClass">
+                        <EditForm Model="_myClass">
 
                          @*    <InputSelect 
                                 class="form-select"
@@ -81,7 +81,7 @@
                 </div>
             </Field>
         </ModalBody>
-        <ModalFooter Class="modalFooter">
+        <ModalFooter>
             <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddClassRef)">CANCEL</Button>
             <Button Color="Color.Primary" @onclick="SaveNewClass">@((_idClass == 0) ? "SAVE CLASS" : "UPDATE CLASS")</Button>
         </ModalFooter>
@@ -91,13 +91,13 @@
 
 <Modal @ref="MyVariablesApp.ModalAddImageClassRef">
     <ModalContent Centered>
-        <ModalHeader Class="modalHeader">
+        <ModalHeader>
             <ModalTitle>ADD IMAGE CLASS</ModalTitle>
             <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddImageClassRef)"></i>
         </ModalHeader>
-        <ModalBody Class="modalBody">
+        <ModalBody>
             <Field>
-                <div class="containerImagePage">
+                <div class="containerModalImages">
                     <img src="@MyVariablesApp.ImageDefault" alt=""/>
                     <EditForm Model="_imagesClass">
                         <InputText class="form-control" placeholder="Name Image" @bind-Value="_imagesClass.NameImage" />
@@ -107,7 +107,7 @@
                 </div>
             </Field>
         </ModalBody>
-        <ModalFooter Class="modalFooter">
+        <ModalFooter>
             <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddImageClassRef)">CANCEL</Button>
             <Button Color="Color.Primary" @onclick="UpLoadImage">ADD IMAGE</Button>
         </ModalFooter>

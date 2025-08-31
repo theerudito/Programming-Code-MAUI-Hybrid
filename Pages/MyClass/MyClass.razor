@@ -14,7 +14,7 @@
                             <i class='@((IdClass == item.IdClass)
                                     ? "bi bi-folder-x "
                                     : "bi bi-folder2")'
-                                    @onclick="() => OpenMyClass(item.IdClass)"></i>
+                                    ></i>
                         </div>
 
                 <div id="containerInformacion" class='@((IdClass == item.IdClass) ? "d-block" : "d-none")'>
@@ -22,7 +22,7 @@
                             <p>@item.InfoClass</p>
                             <div class="containerImageMyClass">
                                 <img src="@((item.ImageUrl == "")
-                                        ? ImagenConverterApp.ToPng(item.ImageBase64)
+                                        ? ImagenConverterApp.ToPng(item.ImageBase64!)
                                         : item.ImageUrl) " alt="code">
                             </div>
                             <div class="containerMyClassControls">

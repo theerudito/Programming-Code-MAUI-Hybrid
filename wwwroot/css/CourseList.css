@@ -10,8 +10,7 @@
     position: fixed;
     top: 10%;
     background: #512BD4;
-    max-width: 400px;
-    min-width: 290px;
+    width: 400px;
     height: 40px;
     color: white;
     border-radius: 10px;

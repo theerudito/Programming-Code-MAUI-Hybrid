@@ -26,15 +26,15 @@
 
 <Modal @ref="MyVariablesApp.ModalAddCourseRef">
     <ModalContent Centered>
-        <ModalHeader Class="modalHeader">
+        <ModalHeader>
             <ModalTitle>ADD COURSE</ModalTitle>
             <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddCourseRef)"></i>
         </ModalHeader>
-        <ModalBody Class="modalBody">
+        <ModalBody>
             <Field>
-               <div class="containerBodyModal">
+                <div class="containerAddBodyModalCourses">
 
-                    <EditForm Model="_course" class="containerBodyModal">
+                    <EditForm Model="_course">
                         
                         <InputSelect class="form-select" @bind-Value="_course.IdImageCourse">
                             <option value="">SELECT AN IMAGE</option>
@@ -62,26 +62,22 @@
                </div>
             </Field>
         </ModalBody>
-        <ModalFooter Class="modalFooter">
+        <ModalFooter>
             <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddCourseRef)">CANCEL</Button>
             <Button Color="Color.Primary" @onclick="SaveNewCourse">ADD COURSE</Button>
         </ModalFooter>
     </ModalContent>
 </Modal>
 
-
-
-
-
 <Modal @ref="MyVariablesApp.ModalAddImageRef">
     <ModalContent Centered>
-        <ModalHeader Class="modalHeader">
+        <ModalHeader>
             <ModalTitle>ADD IMAGE COURSE</ModalTitle>
             <i class="bi bi-x" @onclick="() => CloseModal(MyVariablesApp.ModalAddImageRef)"></i>
         </ModalHeader>
-        <ModalBody Class="modalBody">
+        <ModalBody>
             <Field>
-                <div class="containerImagePage">
+                <div class="containerModalImages">
                     <img src="@MyVariablesApp.ImageDefault" />
                     <input class="form-control" placeholder="Name Image" @bind="_imagesCourse.NameImage" />
                     <input class="form-control" placeholder="Image Url" @bind="_imagesCourse.ImageUrl" />
@@ -89,7 +85,7 @@
                 </div>
             </Field>
         </ModalBody>
-        <ModalFooter Class="modalFooter">
+        <ModalFooter>
             <Button Color="Color.Secondary" Clicked="() => CloseModal(MyVariablesApp.ModalAddImageRef)">CANCEL</Button>
             <Button Color="Color.Primary" @onclick="UpLoadImage">ADD IMAGE</Button>
         </ModalFooter>
